@@ -1,0 +1,458 @@
+{
+  "type": "FeatureCollection",
+  "name": "ancient_5a_sample",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.397, 39.918] },
+      "properties": {
+        "id": 1, "name": "故宫博物院", "province": "北京市", "city": "北京市",
+        "ratingYear": 2007, "category": "宫殿坛庙", "dynasty": "明、清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.4122, 39.8823] },
+      "properties": {
+        "id": 2, "name": "天坛公园", "province": "北京市", "city": "北京市",
+        "ratingYear": 2007, "category": "宫殿坛庙", "dynasty": "明、清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.991, 35.595] },
+      "properties": {
+        "id": 3, "name": "明故城（三孔）旅游区", "province": "山东省", "city": "济宁市",
+        "ratingYear": 2007, "category": "宫殿坛庙", "dynasty": "春秋至清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "孔庙、孔府、孔林，儒家文化核心遗存"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [110.296, 25.278] },
+      "properties": {
+        "id": 4, "name": "独秀峰·靖江王城景区", "province": "广西壮族自治区", "city": "桂林市",
+        "ratingYear": 2012, "category": "宫殿坛庙", "dynasty": "明",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.274, 39.999] },
+      "properties": {
+        "id": 5, "name": "颐和园", "province": "北京市", "city": "北京市",
+        "ratingYear": 2007, "category": "古典园林", "dynasty": "清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.939, 40.999] },
+      "properties": {
+        "id": 6, "name": "承德避暑山庄及周围寺庙景区", "province": "河北省", "city": "承德市",
+        "ratingYear": 2007, "category": "古典园林", "dynasty": "清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.628, 31.325] },
+      "properties": {
+        "id": 7, "name": "苏州园林（拙政园·留园·虎丘）", "province": "江苏省", "city": "苏州市",
+        "ratingYear": 2007, "category": "古典园林", "dynasty": "宋至清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.3862, 39.9372] },
+      "properties": {
+        "id": 8, "name": "恭王府景区", "province": "北京市", "city": "北京市",
+        "ratingYear": 2012, "category": "古典园林", "dynasty": "清",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.176, 37.189] },
+      "properties": {
+        "id": 9, "name": "平遥古城景区", "province": "山西省", "city": "晋中市",
+        "ratingYear": 2015, "category": "古城古镇", "dynasty": "明、清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [100.235, 26.872] },
+      "properties": {
+        "id": 10, "name": "丽江古城景区", "province": "云南省", "city": "丽江市",
+        "ratingYear": 2011, "category": "古城古镇", "dynasty": "宋至清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [75.989, 39.47] },
+      "properties": {
+        "id": 11, "name": "喀什古城景区", "province": "新疆维吾尔自治区", "city": "喀什地区",
+        "ratingYear": 2015, "category": "古城古镇", "dynasty": "明、清",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.844, 31.116] },
+      "properties": {
+        "id": 12, "name": "周庄古镇景区", "province": "江苏省", "city": "苏州市",
+        "ratingYear": 2007, "category": "古城古镇", "dynasty": "明、清",
+        "worldHeritage": false, "majorSite": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.492, 30.746] },
+      "properties": {
+        "id": 13, "name": "乌镇古镇旅游区", "province": "浙江省", "city": "嘉兴市",
+        "ratingYear": 2010, "category": "古城古镇", "dynasty": "明、清",
+        "worldHeritage": false, "majorSite": false
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.986, 30.004] },
+      "properties": {
+        "id": 14, "name": "皖南古村落·西递宏村", "province": "安徽省", "city": "黄山市",
+        "ratingYear": 2011, "category": "古村落", "dynasty": "明、清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "坐标取宏村中心"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.971, 24.662] },
+      "properties": {
+        "id": 15, "name": "福建土楼（永定·南靖）旅游区", "province": "福建省", "city": "龙岩市",
+        "ratingYear": 2011, "category": "古村落", "dynasty": "明、清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "坐标取永定高北土楼群承启楼"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.566, 22.376] },
+      "properties": {
+        "id": 16, "name": "开平碉楼文化旅游区", "province": "广东省", "city": "江门市",
+        "ratingYear": 2020, "category": "古村落", "dynasty": "清末至民国",
+        "worldHeritage": true, "majorSite": true,
+        "note": "侨乡近代建筑，坐标取自力村碉楼群"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.935, 34.508] },
+      "properties": {
+        "id": 17, "name": "嵩山少林景区", "province": "河南省", "city": "郑州市",
+        "ratingYear": 2007, "category": "宗教寺观", "dynasty": "北魏至清",
+        "worldHeritage": false, "majorSite": true,
+        "note": "天地之中历史建筑群为世界遗产"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [91.117, 29.657] },
+      "properties": {
+        "id": 18, "name": "布达拉宫景区", "province": "西藏自治区", "city": "拉萨市",
+        "ratingYear": 2013, "category": "宗教寺观", "dynasty": "唐至清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [91.13, 29.653] },
+      "properties": {
+        "id": 19, "name": "大昭寺景区", "province": "西藏自治区", "city": "拉萨市",
+        "ratingYear": 2013, "category": "宗教寺观", "dynasty": "唐",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [101.567, 36.496] },
+      "properties": {
+        "id": 20, "name": "塔尔寺景区", "province": "青海省", "city": "西宁市",
+        "ratingYear": 2012, "category": "宗教寺观", "dynasty": "明",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [100.149, 25.706] },
+      "properties": {
+        "id": 21, "name": "崇圣寺三塔文化旅游区", "province": "云南省", "city": "大理州",
+        "ratingYear": 2011, "category": "宗教寺观", "dynasty": "唐、五代",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.101, 36.256] },
+      "properties": {
+        "id": 22, "name": "泰山景区", "province": "山东省", "city": "泰安市",
+        "ratingYear": 2007, "category": "历史名山", "dynasty": "先秦至清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "世界文化与自然双遗产，封禅文化名山"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.587, 38.96] },
+      "properties": {
+        "id": 23, "name": "五台山风景名胜区", "province": "山西省", "city": "忻州市",
+        "ratingYear": 2007, "category": "历史名山", "dynasty": "唐至清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "世界文化景观，佛教四大名山之一"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [111.004, 32.403] },
+      "properties": {
+        "id": 24, "name": "武当山风景区", "province": "湖北省", "city": "十堰市",
+        "ratingYear": 2011, "category": "历史名山", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "道教名山，武当山古建筑群为世界遗产"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [103.334, 29.524] },
+      "properties": {
+        "id": 25, "name": "峨眉山景区", "province": "四川省", "city": "乐山市",
+        "ratingYear": 2007, "category": "历史名山", "dynasty": "唐至清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "世界文化与自然双遗产，佛教四大名山之一"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [113.137, 40.109] },
+      "properties": {
+        "id": 26, "name": "云冈石窟景区", "province": "山西省", "city": "大同市",
+        "ratingYear": 2007, "category": "石窟石刻", "dynasty": "北魏",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.477, 34.555] },
+      "properties": {
+        "id": 27, "name": "龙门石窟景区", "province": "河南省", "city": "洛阳市",
+        "ratingYear": 2007, "category": "石窟石刻", "dynasty": "北魏至唐",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.788, 29.775] },
+      "properties": {
+        "id": 28, "name": "大足石刻景区", "province": "重庆市", "city": "重庆市",
+        "ratingYear": 2007, "category": "石窟石刻", "dynasty": "唐、宋",
+        "worldHeritage": true, "majorSite": true,
+        "note": "坐标取宝顶山石刻"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.973, 34.349] },
+      "properties": {
+        "id": 29, "name": "麦积山景区", "province": "甘肃省", "city": "天水市",
+        "ratingYear": 2011, "category": "石窟石刻", "dynasty": "十六国至明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "丝绸之路：长安-天山廊道路网世界遗产组成部分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [109.279, 34.385] },
+      "properties": {
+        "id": 30, "name": "秦始皇帝陵博物院景区", "province": "陕西省", "city": "西安市",
+        "ratingYear": 2007, "category": "古遗址", "dynasty": "秦",
+        "worldHeritage": true, "majorSite": true,
+        "note": "含兵马俑坑与秦始皇陵"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.305, 36.122] },
+      "properties": {
+        "id": 31, "name": "殷墟景区", "province": "河南省", "city": "安阳市",
+        "ratingYear": 2011, "category": "古遗址", "dynasty": "商",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [108.968, 34.294] },
+      "properties": {
+        "id": 32, "name": "大明宫旅游景区", "province": "陕西省", "city": "西安市",
+        "ratingYear": 2020, "category": "古遗址", "dynasty": "唐",
+        "worldHeritage": true, "majorSite": true,
+        "note": "丝绸之路：长安-天山廊道路网世界遗产组成部分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [106.521, 38.325] },
+      "properties": {
+        "id": 33, "name": "水洞沟旅游区", "province": "宁夏回族自治区", "city": "银川市",
+        "ratingYear": 2015, "category": "古遗址", "dynasty": "旧石器时代、明",
+        "worldHeritage": false, "majorSite": true,
+        "note": "旧石器时代遗址与明长城复合景区"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.245, 40.256] },
+      "properties": {
+        "id": 34, "name": "明十三陵景区", "province": "北京市", "city": "北京市",
+        "ratingYear": 2011, "category": "陵寝墓葬", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "明清皇家陵寝世界遗产组成部分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [117.66, 40.19] },
+      "properties": {
+        "id": 35, "name": "清东陵景区", "province": "河北省", "city": "唐山市",
+        "ratingYear": 2015, "category": "陵寝墓葬", "dynasty": "清",
+        "worldHeritage": true, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [108.221, 34.576] },
+      "properties": {
+        "id": 36, "name": "乾陵景区", "province": "陕西省", "city": "咸阳市",
+        "ratingYear": 2024, "category": "陵寝墓葬", "dynasty": "唐",
+        "worldHeritage": false, "majorSite": true,
+        "note": "唐高宗与武则天合葬陵"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [112.638, 31.22] },
+      "properties": {
+        "id": 37, "name": "明显陵文化旅游景区", "province": "湖北省", "city": "荆门市",
+        "ratingYear": 2024, "category": "陵寝墓葬", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "明清皇家陵寝世界遗产组成部分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [116.0243, 40.3593] },
+      "properties": {
+        "id": 38, "name": "八达岭—慕田峪长城旅游区", "province": "北京市", "city": "北京市",
+        "ratingYear": 2007, "category": "关隘长城", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "坐标取八达岭"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [98.216, 39.803] },
+      "properties": {
+        "id": 39, "name": "嘉峪关文物景区", "province": "甘肃省", "city": "嘉峪关市",
+        "ratingYear": 2007, "category": "关隘长城", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "万里长城西端起点，长城世界遗产组成部分"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [119.756, 40.009] },
+      "properties": {
+        "id": 40, "name": "秦皇岛市山海关景区", "province": "河北省", "city": "秦皇岛市",
+        "ratingYear": 2007, "category": "关隘长城", "dynasty": "明",
+        "worldHeritage": true, "majorSite": true,
+        "note": "2015 年被取消 5A 等级，2018 年复牌"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [105.551, 32.201] },
+      "properties": {
+        "id": 41, "name": "剑门蜀道剑门关旅游景区", "province": "四川省", "city": "广元市",
+        "ratingYear": 2015, "category": "关隘长城", "dynasty": "三国",
+        "worldHeritage": false, "majorSite": true,
+        "note": "蜀道核心关隘"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [119.297, 26.083] },
+      "properties": {
+        "id": 42, "name": "三坊七巷景区", "province": "福建省", "city": "福州市",
+        "ratingYear": 2015, "category": "历史街区", "dynasty": "晋至民国",
+        "worldHeritage": false, "majorSite": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [118.067, 24.449] },
+      "properties": {
+        "id": 43, "name": "鼓浪屿风景名胜区", "province": "福建省", "city": "厦门市",
+        "ratingYear": 2007, "category": "历史街区", "dynasty": "清末至民国",
+        "worldHeritage": true, "majorSite": true,
+        "note": "历史国际社区世界文化遗产"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [108.946, 34.254] },
+      "properties": {
+        "id": 44, "name": "西安城墙·碑林历史文化景区", "province": "陕西省", "city": "西安市",
+        "ratingYear": 2018, "category": "复合人文", "dynasty": "宋至明",
+        "worldHeritage": false, "majorSite": true,
+        "note": "明城墙与西安碑林复合景区"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [114.302, 30.543] },
+      "properties": {
+        "id": 45, "name": "黄鹤楼公园", "province": "湖北省", "city": "武汉市",
+        "ratingYear": 2007, "category": "复合人文", "dynasty": "三国始建",
+        "worldHeritage": false, "majorSite": false,
+        "note": "历史名楼，现存建筑为 1985 年复建"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [120.145, 30.245] },
+      "properties": {
+        "id": 46, "name": "杭州西湖风景区", "province": "浙江省", "city": "杭州市",
+        "ratingYear": 2007, "category": "复合人文", "dynasty": "唐至清",
+        "worldHeritage": true, "majorSite": true,
+        "note": "世界文化景观，坐标取湖心"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [118.79, 32.023] },
+      "properties": {
+        "id": 47, "name": "夫子庙·秦淮风光带景区", "province": "江苏省", "city": "南京市",
+        "ratingYear": 2010, "category": "复合人文", "dynasty": "宋至清",
+        "worldHeritage": false, "majorSite": true
+      }
+    }
+  ]
+}

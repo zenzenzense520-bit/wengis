@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WENGIS 文脉地理信息系统</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="top-bar">
+        <h1>WENGIS 文脉地理信息系统</h1>
+        <span class="subtitle">全国古代类 5A 级旅游景区时空可视化平台</span>
+      </header>
+      <div class="layout">
+        <aside class="side-panel">
+          <section class="panel-block">
+            <h2>底图</h2>
+            <label class="layer-toggle">
+              <input type="radio" name="basemap" value="tdt-vec" checked />
+              天地图矢量（默认）
+            </label>
+            <label class="layer-toggle">
+              <input type="radio" name="basemap" value="tdt-img" />
+              天地图影像
+            </label>
+            <label class="layer-toggle">
+              <input type="radio" name="basemap" value="arcgis-street" />
+              ArcGIS 街道图
+            </label>
+            <label class="layer-toggle">
+              <input type="radio" name="basemap" value="arcgis-topo" />
+              ArcGIS 地形图
+            </label>
+            <label class="layer-toggle">
+              <input type="radio" name="basemap" value="osm" />
+              OpenStreetMap
+            </label>
+          </section>
+          <section class="panel-block">
+            <h2>图层控制</h2>
+            <label class="layer-toggle">
+              <input type="checkbox" id="layer-spots" checked />
+              古代类 5A 景区（样例）
+            </label>
+            <label class="layer-toggle">
+              <input type="checkbox" id="layer-cluster" checked />
+              聚合显示
+            </label>
+          </section>
+          <section class="panel-block">
+            <h2>类别图例</h2>
+            <div id="legend" class="legend"></div>
+          </section>
+          <section class="panel-block">
+            <h2>数据说明</h2>
+            <p class="note">
+              默认底图为天地图（CGCS2000，中文标注），可切换 ArcGIS/OSM；
+              样例坐标为 WGS84 近似值，正式数据将经天地图核对。
+            </p>
+          </section>
+        </aside>
+        <main id="map" class="map-container"></main>
+      </div>
+      <div id="popup" class="ol-popup hidden">
+        <div id="popup-content"></div>
+      </div>
+      <div id="loading" class="loading">数据加载中…</div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

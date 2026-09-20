@@ -1,0 +1,21 @@
+{
+  "name": "wengis",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "WENGIS 文脉地理信息系统 - 全国古代类 5A 级旅游景区时空可视化平台",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 43200",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 43201",
+    "validate-data": "node scripts/validate-data.mjs"
+  },
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "ol": "^10.10.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}
