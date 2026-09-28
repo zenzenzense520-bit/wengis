@@ -70,6 +70,7 @@ export function buildFeatures(collection: SpotCollection): Feature<Point>[] {
 export interface SpotsLayerHandle {
   layer: VectorLayer<VectorSource>;
   setClusterEnabled: (enabled: boolean) => void;
+  setFeatures: (items: Feature<Point>[]) => void;
   getFeaturesAtPixel: (map: Map, pixel: number[]) => Feature[];
 }
 
@@ -113,5 +114,10 @@ export function createSpotsLayer(features: Feature<Point>[]): SpotsLayerHandle {
     return children ?? [hit];
   };
 
-  return { layer, setClusterEnabled, getFeaturesAtPixel };
+  // 筛选更新原始源，聚合源自动同步，保留聚合开关状态。
+  const setFeatures = (items: Feature<Point>[]): void => {
+    rawSource.clear();
+    rawSource.addFeatures(items);
+  };
+  return { layer, setClusterEnabled, getFeaturesAtPixel, setFeatures };
 }

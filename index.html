@@ -13,11 +13,26 @@
       </header>
       <div class="layout">
         <aside class="side-panel">
+          <!-- 新增组合筛选与实时统计；明确样例口径。 -->
+          <section class="panel-block">
+            <h2>筛选样例景区</h2>
+            <form id="filters">
+              <label class="filter-field">名称 / 城市<input id="filter-keyword" type="search" placeholder="例如：故宫、北京" maxlength="100" /></label>
+              <label class="filter-field">省份<select id="filter-province"><option value="">全部省份</option></select></label>
+              <label class="filter-field">文化类别<select id="filter-category"><option value="">全部类别</option></select></label>
+              <label class="filter-field">朝代记录<select id="filter-dynasty"><option value="">全部朝代记录</option></select></label>
+              <label class="filter-field">5A 评定截止年份<output id="year-label" for="filter-year"></output><input id="filter-year" type="range" step="1" /></label>
+              <p class="note">朝代按原始记录匹配；年份仅表示 5A 评定时间。</p>
+              <button type="reset" class="reset-button">重置全部筛选</button>
+            </form>
+            <p id="filter-summary" role="status" aria-live="polite"></p>
+          </section>
+          <section class="panel-block"><h2>当前结果类别分布</h2><div id="statistics"></div></section>
           <section class="panel-block">
             <h2>底图</h2>
             <label class="layer-toggle">
-              <input type="radio" name="basemap" value="tdt-vec" checked />
-              天地图矢量（默认）
+              <input type="radio" name="basemap" value="tdt-vec" />
+              天地图矢量（需配置）
             </label>
             <label class="layer-toggle">
               <input type="radio" name="basemap" value="tdt-img" />
@@ -54,12 +69,12 @@
           <section class="panel-block">
             <h2>数据说明</h2>
             <p class="note">
-              默认底图为天地图（CGCS2000，中文标注），可切换 ArcGIS/OSM；
-              样例坐标为 WGS84 近似值，正式数据将经天地图核对。
+              有有效配置时使用天地图，否则使用 ArcGIS。当前仅展示 47 个样例，
+              坐标为 WGS84 近似值（约 1 km 精度），统计仅描述当前样例。
             </p>
           </section>
         </aside>
-        <main id="map" class="map-container"></main>
+        <main class="map-container"><div id="map"></div><p id="empty-results" class="empty-results hidden" role="status">没有符合条件的样例景区，请调整条件或重置。</p></main>
       </div>
       <div id="popup" class="ol-popup hidden">
         <div id="popup-content"></div>

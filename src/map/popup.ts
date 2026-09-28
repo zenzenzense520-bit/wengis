@@ -1,6 +1,7 @@
 import Overlay from 'ol/Overlay';
 import type { SpotProperties } from '../types/spot';
 import { CATEGORY_COLORS } from '../config/layers';
+import { escapeHtml } from '../components/escapeHtml';
 
 // 景区信息弹窗（OpenLayers Overlay）
 
@@ -15,8 +16,8 @@ export interface PopupHandle {
 function renderContent(properties: SpotProperties): string {
   const color = CATEGORY_COLORS[properties.category] ?? '#333333';
   const tags: string[] = [
-    `<span class="tag" style="background:${color}">${properties.category}</span>`,
-    `<span class="tag">${properties.dynasty}</span>`,
+    `<span class="tag" style="background:${color}">${escapeHtml(properties.category)}</span>`,
+    `<span class="tag">${escapeHtml(properties.dynasty)}</span>`,
   ];
   if (properties.worldHeritage) {
     tags.push('<span class="tag tag-heritage">世界遗产</span>');
@@ -24,12 +25,12 @@ function renderContent(properties: SpotProperties): string {
   if (properties.majorSite) {
     tags.push('<span class="tag tag-site">全国重点文保</span>');
   }
-  const note = properties.note ? `<p class="popup-note">${properties.note}</p>` : '';
+  const note = properties.note ? `<p class="popup-note">${escapeHtml(properties.note)}</p>` : '';
   return `
-    <div class="popup-title">${properties.name}</div>
+    <div class="popup-title">${escapeHtml(properties.name)}</div>
     <div class="popup-tags">${tags.join('')}</div>
     <table class="popup-table">
-      <tr><td>地区</td><td>${properties.province} · ${properties.city}</td></tr>
+      <tr><td>地区</td><td>${escapeHtml(properties.province)} · ${escapeHtml(properties.city)}</td></tr>
       <tr><td>5A 评定</td><td>${properties.ratingYear} 年</td></tr>
     </table>
     ${note}
