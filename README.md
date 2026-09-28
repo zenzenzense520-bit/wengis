@@ -10,7 +10,7 @@
 
 - 数据基准：文旅部全国 5A 景区 **358 家**官方名单（2025 口径），按文化标准筛选古代类（预计 150–180 家）。
 - 双时间维度：`ratingYear`（5A 评定年份，现代管理）+ `dynasty`（始建/主体朝代，古代文化主轴）。
-- 纯 FOSS 架构：OpenLayers + GeoServer + PostGIS + OSM，无商业 GIS 组件。
+- 当前为 OpenLayers 前端与静态 GeoJSON；GeoServer、PostGIS 为计划接入的开源服务，外部底图包含天地图、ArcGIS 和 OSM。
 
 ## 二、技术栈
 
@@ -54,18 +54,19 @@ webgis/
 
 ## 四、快速开始
 
-```powershell
-Set-Location D:\webgis
-npm install
-# 配置天地图 key（可选但推荐：中文标注、标准国界线；不配置则自动回退 ArcGIS 底图）
-Copy-Item .env.example .env.local   # 编辑 .env.local 填入 VITE_TIANDITU_KEY
-npm run validate-data               # 校验 GeoJSON
-npm run dev                         # http://localhost:43200
+需要 Node.js 24，在项目目录内使用 Git Bash：
+
+```bash
+bash scripts/tests/setup.sh         # 按锁文件安装已有依赖
+bash scripts/test.sh                # 逻辑、数据、类型检查和生产构建
+bash scripts/dev.sh                 # http://localhost:43200
 ```
+
+天地图为可选配置：复制 `.env.example` 为 `.env.local`，填入 `VITE_TIANDITU_KEY`。未配置或格式无效时使用 ArcGIS 底图。
 
 天地图 key 免费申请：https://console.tianditu.gov.cn/ （`.env.local` 已被 .gitignore 忽略，不进入代码仓库）。
 
-构建：`npm run build`（先 `tsc --noEmit` 类型检查，再 Vite 打包）。
+仅构建：`bash scripts/build.sh`。运行与构建日志统一写入 `logs/`。
 
 ## 五、运行效果（最小 demo 已验证）
 
@@ -81,7 +82,9 @@ npm run dev                         # http://localhost:43200
 
 ![天地图影像](docs/images/03_天地图影像.png)
 
-端到端验证（puppeteer-core + 系统 Edge，8 项断言全过）：图例 12 项、单点弹窗、空白关闭、聚合放大、底图切换、无运行时错误。
+新增名称、省份、类别、朝代记录和评定截止年份筛选，地图与样例类别统计同步更新，支持空结果提示和重置。朝代记录精确匹配，评定年份表示累计截止口径。当前仍为 47 点样例，不代表完整全国数据。
+
+可复现验证：Node.js 24 下运行 `bash scripts/test.sh`（逻辑、数据、类型检查、生产构建），Windows 下运行 `bash scripts/test-browser.sh`（系统 Edge 验证筛选、地图、统计、重置、散点模式及移动布局），日志输出到 `logs/`。详见 [筛选统计与验证](docs/04_筛选统计与验证.md)。
 
 ## 六、当前进度
 
@@ -89,13 +92,15 @@ npm run dev                         # http://localhost:43200
 - [x] 古代类筛选口径与 12 分类体系（docs/01）
 - [x] 前端工程骨架（Vite + TS 严格模式 + OpenLayers）
 - [x] 底图切换（天地图矢量/影像、ArcGIS 街道/地形、OSM）+ 47 点聚合 + 类别配色 + 弹窗 + 图层开关
-- [x] 端到端交互验证（弹窗/聚合放大/底图切换，8/8 断言通过）
+- [x] 名称、省份、类别、朝代记录、评定截止年份筛选与地图统计联动
+- [x] 可复现逻辑测试与 Edge 交互测试
+- [ ] GitHub 自动验证流程（当前提交凭据缺少 workflow 权限）
 - [x] GeoJSON 数据校验与 GeoJSON→SQL 工具
 - [x] PostGIS 建库建表 SQL、GeoServer 发布文档
 - [ ] 安装 PostGIS 3.6+（需 postgres 密码，见 docs/02）
 - [ ] 安装 JDK 21 + GeoServer 2.28.x（见 docs/03）
 - [ ] 358 家全量筛选与坐标地理编码（150–180 家）
-- [ ] 朝代时间轴、类别/省份筛选、ECharts 统计图
+- [ ] 正式朝代时间轴与 ECharts 统计图（当前已有样例类别分布统计）
 - [ ] 省界面图层、核密度分析、WMS/WFS 接入
 
 ## 七、课程考核点对应

@@ -32,7 +32,9 @@ export const CLUSTER_DISTANCE = 48;
 export const CLUSTER_MIN_DISTANCE = 18;
 
 /** 天地图密钥：从 .env.local 读取（VITE_TIANDITU_KEY），不写入代码仓库 */
-export const TIANDITU_KEY = import.meta.env.VITE_TIANDITU_KEY ?? '';
+// 示例占位值与错误格式不会触发天地图请求。
+const configuredKey = (import.meta.env.VITE_TIANDITU_KEY ?? '').trim();
+export const TIANDITU_KEY = /^[a-f0-9]{32}$/i.test(configuredKey) ? configuredKey : '';
 
 /** 默认底图：已配置天地图 key 时用天地图矢量（中文标注、标准边界），否则回退 ArcGIS */
 export const DEFAULT_BASEMAP: BasemapId = TIANDITU_KEY ? 'tdt-vec' : 'arcgis-street';
