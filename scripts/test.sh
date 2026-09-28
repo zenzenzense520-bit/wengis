@@ -4,4 +4,5 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p logs
 node --experimental-strip-types scripts/tests/logic.mjs 2>&1 | tee logs/test.log
+node --experimental-strip-types scripts/tests/evidence.mjs 2>&1 | tee -a logs/test.log
 bash scripts/build.sh 2>&1 | tee -a logs/test.log

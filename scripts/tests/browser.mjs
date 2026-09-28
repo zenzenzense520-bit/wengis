@@ -83,6 +83,7 @@ async function main() {
   assert.equal(initial.legend, 12);
   assert.equal(initial.basemap, 'arcgis-street');
   assert.equal(initial.count, 47);
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('已核验关联 5'));
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='故宫';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);
@@ -106,6 +107,30 @@ async function main() {
   await delay(400);
   assert.ok((await evaluate("document.querySelector('#popup-content').textContent")).includes('故宫博物院'));
   assert.equal(await evaluate("document.querySelector('#popup').classList.contains('hidden')"), false);
+  // 来源链接按字段显示，不能把整条记录或坐标标为已核验。
+  const evidenceView = await evaluate(`({
+    url:document.querySelector('.popup-evidence a').href,
+    target:document.querySelector('.popup-evidence a').target,
+    rel:document.querySelector('.popup-evidence a').rel,
+    text:document.querySelector('.popup-evidence').textContent
+  })`);
+  assert.equal(evidenceView.url, 'https://whc.unesco.org/en/list/439/');
+  assert.equal(evidenceView.target, '_blank');
+  assert.ok(evidenceView.rel.includes('noopener'));
+  assert.ok(evidenceView.text.includes('未逐点核验'));
+  assert.ok(evidenceView.text.includes('5A 年份、朝代记录、全国重点文保身份：待逐字段核验'));
+  await delay(700); // 等待点选延迟及地图平移动画结束。
+  const popupPosition = await evaluate(`(() => {
+    const title=document.querySelector('.popup-title').getBoundingClientRect();
+    const map=document.querySelector('#map').getBoundingClientRect();
+    const popup=document.querySelector('#popup');
+    return {titleTop:title.top,titleBottom:title.bottom,mapTop:map.top,mapBottom:map.bottom,
+      popupTop:popup.getBoundingClientRect().top,scrollTop:popup.scrollTop};
+  })()`);
+  assert.ok(popupPosition.titleTop>=popupPosition.mapTop && popupPosition.titleBottom<=popupPosition.mapBottom,
+    `弹窗标题应在地图视口内：${JSON.stringify(popupPosition)}`);
+  const desktop = await command('Page.captureScreenshot', {format:'png'});
+  fs.writeFileSync(path.join(root,'logs','browser-evidence.png'),Buffer.from(desktop.data,'base64'));
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='不存在的景区';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);
@@ -122,10 +147,31 @@ async function main() {
   await evaluate("document.querySelector('#filters').reset()");
   await command('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
   assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true);
+  // 移动端真实点选，确保加长的来源弹窗仍能在地图区域内阅读。
+  await evaluate(`(() => {
+    const k=document.querySelector('#filter-keyword');k.value='故宫';k.dispatchEvent(new Event('input',{bubbles:true}));
+  })()`);
+  await delay(300);
+  const mobilePoint = await evaluate(`(() => {
+    const viewer=window.__viewer;
+    const f=viewer.spotsHandle.layer.getSource().getFeatures()[0];
+    const pixel=viewer.map.getPixelFromCoordinate(f.getGeometry().getCoordinates());
+    const rect=document.querySelector('#map').getBoundingClientRect();
+    return {x:rect.left+pixel[0],y:rect.top+pixel[1]};
+  })()`);
+  await command('Input.dispatchMouseEvent', {type:'mousePressed',button:'left',clickCount:1,...mobilePoint});
+  await command('Input.dispatchMouseEvent', {type:'mouseReleased',button:'left',clickCount:1,...mobilePoint});
+  await delay(1000);
+  assert.equal(await evaluate("document.querySelector('#popup').classList.contains('hidden')"), false);
+  assert.ok(await evaluate(`(() => {
+    const popup=document.querySelector('#popup').getBoundingClientRect();
+    const map=document.querySelector('#map').getBoundingClientRect();
+    return popup.left>=map.left && popup.right<=map.right && popup.top>=map.top;
+  })()`), '移动端来源弹窗不应被地图边缘裁切');
   const screenshot = await command('Page.captureScreenshot', { format: 'png' });
   fs.writeFileSync(path.join(root, 'logs', 'browser-mobile.png'), Buffer.from(screenshot.data, 'base64'));
   assert.equal(errors.length, 0, '页面交互出现运行时异常');
-  console.log('通过：Edge 47 点初始化、底图状态、筛选地图统计联动、空结果、重置、散点筛选与移动布局。');
+  console.log('通过：Edge 初始化、筛选地图统计联动、弹窗字段级来源、空结果、重置、散点筛选与移动布局。');
 } finally {
   if (socket) socket.close();
   // 仅结束本测试启动的进程树；临时目录保持在 logs 内。
