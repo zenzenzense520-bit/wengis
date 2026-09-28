@@ -2,6 +2,7 @@ import Overlay from 'ol/Overlay';
 import type { SpotProperties } from '../types/spot';
 import { CATEGORY_COLORS } from '../config/layers';
 import { escapeHtml } from '../components/escapeHtml';
+import { renderEvidence } from '../components/evidencePanel';
 
 // 景区信息弹窗（OpenLayers Overlay）
 
@@ -20,10 +21,12 @@ function renderContent(properties: SpotProperties): string {
     `<span class="tag">${escapeHtml(properties.dynasty)}</span>`,
   ];
   if (properties.worldHeritage) {
-    tags.push('<span class="tag tag-heritage">世界遗产</span>');
+    // 遗产与文保标签保留样例口径，证据状态按字段展示。
+    const label = properties.evidence?.heritageSources.length ? '世界遗产（关联已核验）' : '世界遗产（待核验）';
+    tags.push(`<span class="tag tag-heritage">${label}</span>`);
   }
   if (properties.majorSite) {
-    tags.push('<span class="tag tag-site">全国重点文保</span>');
+    tags.push('<span class="tag tag-site">全国重点文保（待核验）</span>');
   }
   const note = properties.note ? `<p class="popup-note">${escapeHtml(properties.note)}</p>` : '';
   return `
@@ -34,6 +37,7 @@ function renderContent(properties: SpotProperties): string {
       <tr><td>5A 评定</td><td>${properties.ratingYear} 年</td></tr>
     </table>
     ${note}
+    ${renderEvidence(properties)}
   `;
 }
 
@@ -56,6 +60,10 @@ export function createPopup(popupElement: HTMLElement): PopupHandle {
     contentElement.innerHTML = renderContent(properties);
     popupElement.classList.remove('hidden');
     overlay.setPosition(coordinate);
+    // 新增来源使弹窗变高；布局完成后重新平移，避免标题被地图边缘裁切。
+    requestAnimationFrame(() => {
+      if (overlay.getPosition()) overlay.panIntoView({ animation: { duration: 200 } });
+    });
   };
 
   const hide = (): void => {

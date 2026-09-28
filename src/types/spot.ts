@@ -1,4 +1,5 @@
 // 古代类 5A 景区数据类型定义
+import type { SpotEvidence } from './evidence';
 
 /** 景区文化类别（初版分类口径，详见 docs/01_数据口径与分类.md） */
 export type SpotCategory =
@@ -37,6 +38,8 @@ export interface SpotProperties {
   majorSite: boolean;
   /** 备注（复建、复合景区等说明） */
   note?: string;
+  /** 字段级核验信息由独立证据记录关联生成，未核验字段仍属样例。 */
+  evidence?: SpotEvidence;
 }
 
 /** 景区点要素 */
