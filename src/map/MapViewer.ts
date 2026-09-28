@@ -22,7 +22,7 @@ import {
   type SpotsLayerHandle,
 } from './spotsLayer';
 import { createPopup, type PopupHandle } from './popup';
-import type { SpotCollection, SpotProperties, SpotCategory } from '../types/spot';
+import type { SpotCollection, SpotFeature, SpotProperties, SpotCategory } from '../types/spot';
 
 // 地图总装：底图、点位图层、弹窗、图层开关与图例
 
@@ -31,6 +31,7 @@ export class MapViewer {
   private readonly basemapGroup: LayerGroup;
   private readonly spotsHandle: SpotsLayerHandle;
   private readonly popup: PopupHandle;
+  private activeBasemap: BasemapId = DEFAULT_BASEMAP;
 
   constructor(target: HTMLElement, popupElement: HTMLElement, data: SpotCollection) {
     const features = buildFeatures(data);
@@ -59,6 +60,7 @@ export class MapViewer {
 
     this.bindClick();
     this.bindControls();
+    this.syncBasemapControls();
   }
 
   /** 点击点位：单点弹窗，聚合点放大 */
@@ -105,10 +107,26 @@ export class MapViewer {
   private switchBasemap(id: BasemapId): void {
     const layers = createBasemap(id);
     if (layers.length === 0) {
+      this.syncBasemapControls();
       window.alert('天地图底图需要先在 .env.local 配置 VITE_TIANDITU_KEY（免费申请）');
       return;
     }
     this.basemapGroup.setLayers(new Collection<BaseLayer>(layers));
+    this.activeBasemap = id;
+    this.syncBasemapControls();
+  }
+
+  // 修复缺少 key 时底图实际状态与单选按钮不一致。
+  private syncBasemapControls(): void {
+    document.querySelectorAll<HTMLInputElement>('input[name="basemap"]').forEach(radio => {
+      radio.checked = radio.value === this.activeBasemap;
+    });
+  }
+
+  setSpots(items: SpotFeature[]): void {
+    this.popup.hide();
+    this.spotsHandle.setFeatures(buildFeatures({ type: 'FeatureCollection', features: items }));
+    if (items.length) this.fitToSpots();
   }
 
   /** 渲染类别图例 */
@@ -140,7 +158,9 @@ export class MapViewer {
     const source = this.spotsHandle.layer.getSource();
     const extent = source?.getExtent();
     if (extent && extent.every((v) => Number.isFinite(v))) {
-      this.map.getView().fit(extent, { padding: [40, 40, 40, 320], maxZoom: 12 });
+      // 地图本身已排除侧栏；按视口缩小留白，避免窄屏点位被挤出视野。
+      const padding = Math.min(40, (this.map.getSize()?.[0] ?? 240) / 6);
+      this.map.getView().fit(extent, { padding: [padding, padding, padding, padding], maxZoom: 12 });
     }
   }
 }

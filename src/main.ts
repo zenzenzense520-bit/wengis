@@ -2,6 +2,7 @@ import 'ol/ol.css';
 import './style.css';
 import { MapViewer } from './map/MapViewer';
 import { loadSpots } from './data/spotsRepository';
+import { bindFilterPanel } from './components/filterPanel';
 // Vite 将 GeoJSON 作为静态资源 URL 处理
 import spotsUrl from '../data/geojson/ancient_5a.sample.geojson?url';
 
@@ -19,6 +20,8 @@ async function bootstrap(): Promise<void> {
     const viewer = new MapViewer(mapElement, popupElement, data);
     viewer.renderLegend();
     viewer.fitToSpots();
+    // 新增筛选地图与统计共享同一结果集合。
+    bindFilterPanel(data.features, items => viewer.setSpots(items));
     // 开发环境暴露实例，便于浏览器控制台调试与端到端测试（生产构建不暴露）
     if (import.meta.env.DEV) {
       (window as unknown as { __viewer?: MapViewer }).__viewer = viewer;
