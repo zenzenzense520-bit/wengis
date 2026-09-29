@@ -35,7 +35,7 @@ export function bindFilterPanel(features: SpotFeature[], onChange: (items: SpotF
     });
     yearLabel.textContent = `${year.value} 年及以前`;
     // 区分样例中的遗产标记与已经补齐来源的关联身份。
-    summary.textContent = `当前 ${filtered.length} / ${features.length} 个样例景区 · 遗产标记 ${filtered.filter(f => f.properties.worldHeritage).length} 个 · 已核验关联 ${filtered.filter(f => f.properties.evidence?.heritageSources.length).length} 个`;
+    summary.textContent = `当前 ${filtered.length} / ${features.length} 个样例景区 · 遗产标记 ${filtered.filter(f => f.properties.worldHeritage).length} 个 · 已核验关联 ${filtered.filter(f => f.properties.evidence?.heritageSources.length).length} 个 · 年份已核验 ${filtered.filter(f => f.properties.evidence?.ratingSources.length).length} 个`;
     empty.classList.toggle('hidden', filtered.length > 0);
     statistics.replaceChildren();
     const counts = categoryCounts(filtered);
