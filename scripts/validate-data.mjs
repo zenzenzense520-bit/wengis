@@ -14,6 +14,7 @@ try {
   if (!process.argv[2]) {
     const enriched = attachEvidence(data, verifiedRecords);
     console.log(`[OK] 来源关联：${enriched.features.filter(f => f.properties.evidence?.heritageSources.length).length} / ${data.features.length}；坐标均待核验`);
+    console.log(`[OK] 年份已核验 ${enriched.features.filter(f => f.properties.evidence?.ratingSources.length).length}；坐标候选 ${enriched.features.filter(f => f.properties.evidence?.coordinateSources.length).length}（未替换样例）`);
   }
 } catch (error) {
   console.error(`[FAIL] 数据校验失败：${error instanceof Error ? error.message : String(error)}`);
