@@ -84,6 +84,7 @@ async function main() {
   assert.equal(initial.basemap, 'arcgis-street');
   assert.equal(initial.count, 47);
   assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('已核验关联 5'));
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('年份已核验 5'));
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='故宫';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);
@@ -118,7 +119,13 @@ async function main() {
   assert.equal(evidenceView.target, '_blank');
   assert.ok(evidenceView.rel.includes('noopener'));
   assert.ok(evidenceView.text.includes('未逐点核验'));
-  assert.ok(evidenceView.text.includes('5A 年份、朝代记录、全国重点文保身份：待逐字段核验'));
+  assert.ok(evidenceView.text.includes('5A 年份：已核验评定年份'));
+  assert.ok(evidenceView.text.includes('朝代记录、全国重点文保身份：待逐字段核验'));
+  assert.ok(evidenceView.text.includes('已记录候选，入口未核验'));
+  assert.equal(await evaluate("document.querySelector('[data-source-field=ratingYear] a').href"),
+    'https://sjfw.mct.gov.cn/site/dataservice/rural?type=10');
+  assert.equal(await evaluate("document.querySelector('[data-source-field=coordinates] a').href"),
+    'https://www.openstreetmap.org/node/3884441391');
   await delay(700); // 等待点选延迟及地图平移动画结束。
   const popupPosition = await evaluate(`(() => {
     const title=document.querySelector('.popup-title').getBoundingClientRect();
@@ -131,6 +138,19 @@ async function main() {
     `弹窗标题应在地图视口内：${JSON.stringify(popupPosition)}`);
   const desktop = await command('Page.captureScreenshot', {format:'png'});
   fs.writeFileSync(path.join(root,'logs','browser-evidence.png'),Buffer.from(desktop.data,'base64'));
+  // 真实滚轮可读到候选来源与署名，不只检查隐藏在长弹窗中的 DOM。
+  const wheelPoint = await evaluate(`(() => {
+    const rect=document.querySelector('#popup').getBoundingClientRect();
+    return {x:rect.left+rect.width/2,y:rect.top+rect.height/2};
+  })()`);
+  await command('Input.dispatchMouseEvent', {type:'mouseWheel',deltaX:0,deltaY:1600,...wheelPoint});
+  await delay(300);
+  assert.ok(await evaluate(`(() => {
+    const popup=document.querySelector('#popup');
+    const link=document.querySelector('[data-source-field=coordinates] a').getBoundingClientRect();
+    const rect=popup.getBoundingClientRect();
+    return popup.scrollTop>0 && link.top>=rect.top && link.bottom<=rect.bottom;
+  })()`), '滚动后应能读到坐标候选来源');
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='不存在的景区';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);

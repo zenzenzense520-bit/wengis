@@ -59,6 +59,8 @@ export function createPopup(popupElement: HTMLElement): PopupHandle {
   const show = (properties: SpotProperties, coordinate: number[]): void => {
     contentElement.innerHTML = renderContent(properties);
     popupElement.classList.remove('hidden');
+    // 切换点位后从标题开始阅读，避免保留上一景区的来源滚动位置。
+    popupElement.scrollTop = 0;
     overlay.setPosition(coordinate);
     // 新增来源使弹窗变高；布局完成后重新平移，避免标题被地图边缘裁切。
     requestAnimationFrame(() => {
