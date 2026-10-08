@@ -1,5 +1,5 @@
 import type { SpotCollection } from '../types/spot';
-import type { EvidenceRecord, FieldSource } from '../types/evidence';
+import type { EvidenceRecord, FieldSource, RatingSource } from '../types/evidence';
 import type { SpotProperties } from '../types/spot';
 
 // 拒绝可执行协议、账号密码链接及错误的证据关联。
@@ -11,9 +11,32 @@ export function safeSourceUrl(value: string): string {
   return url.href;
 }
 
+// 原文只能是官方列示年份；多个年份必须升序且显式采用最早列示口径。
+function ratingMatches(source: RatingSource, properties: SpotProperties): boolean {
+  if (!source.officialName?.trim() || !/^(20\d{2})(\/20\d{2})*年$/.test(source.officialYearText)) return false;
+  const years = source.officialYearText.slice(0, -1).split('/').map(Number);
+  const hasDetail = source.detailYearText !== undefined || source.detailUrl !== undefined;
+  const detailMatches = !hasDetail || (typeof source.detailYearText === 'string' &&
+    /^20\d{2}年(?:\/20\d{2}年)*$/.test(source.detailYearText) &&
+    source.detailYearText !== source.officialYearText &&
+    typeof source.detailUrl === 'string' &&
+    new URL(safeSourceUrl(source.detailUrl)).hostname === 'sjfw.mct.gov.cn');
+  return years.every((year, i) => year >= 2007 && year <= 2026 && (i === 0 || year > years[i - 1])) &&
+    detailMatches &&
+    source.yearBasis === (years.length === 1 ? 'single-listed' : 'earliest-listed') &&
+    source.expectedValue === years[0] && source.expectedValue === properties.ratingYear;
+}
+
+export function ratingYearStatus(properties: SpotProperties): 'single' | 'multiple' | 'conflict' | 'pending' {
+  const ratings = properties.evidence?.ratingSources ?? [];
+  if (ratings.some(source => source.detailYearText)) return 'conflict';
+  if (ratings.some(source => source.yearBasis === 'earliest-listed')) return 'multiple';
+  return ratings.length ? 'single' : 'pending';
+}
+
 function sourceMatches(source: FieldSource, properties: SpotProperties): boolean {
   if (source.field === 'worldHeritage') return source.expectedValue === properties.worldHeritage;
-  if (source.field === 'ratingYear') return source.expectedValue === properties.ratingYear;
+  if (source.field === 'ratingYear') return ratingMatches(source, properties);
   if (source.field !== 'coordinates') return false;
   const point = source.referencePoint;
   return source.role === 'candidate' && source.crs === 'EPSG:4326' &&

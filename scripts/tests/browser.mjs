@@ -84,7 +84,9 @@ async function main() {
   assert.equal(initial.basemap, 'arcgis-street');
   assert.equal(initial.count, 47);
   assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('已核验关联 5'));
-  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('年份已核验 5'));
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('年份一致 45'));
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('多年份 1'));
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('年份冲突 1'));
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='故宫';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);
@@ -119,7 +121,7 @@ async function main() {
   assert.equal(evidenceView.target, '_blank');
   assert.ok(evidenceView.rel.includes('noopener'));
   assert.ok(evidenceView.text.includes('未逐点核验'));
-  assert.ok(evidenceView.text.includes('5A 年份：已核验评定年份'));
+  assert.ok(evidenceView.text.includes('5A 年份：官方列示年份一致'));
   assert.ok(evidenceView.text.includes('朝代记录、全国重点文保身份：待逐字段核验'));
   assert.ok(evidenceView.text.includes('已记录候选，入口未核验'));
   assert.equal(await evaluate("document.querySelector('[data-source-field=ratingYear] a').href"),
@@ -151,6 +153,55 @@ async function main() {
     const rect=popup.getBoundingClientRect();
     return popup.scrollTop>0 && link.top>=rect.top && link.bottom<=rect.bottom;
   })()`), '滚动后应能读到坐标候选来源');
+  // 山海关保留官方多年份原文，累计 2007 年结果不能被 2018 年复牌覆盖。
+  await evaluate(`(() => {
+    const k=document.querySelector('#filter-keyword');k.value='山海关';k.dispatchEvent(new Event('input',{bubbles:true}));
+    const year=document.querySelector('#filter-year');year.value='2007';year.dispatchEvent(new Event('input',{bubbles:true}));
+  })()`);
+  const mountainSummary = await evaluate("document.querySelector('#filter-summary').textContent");
+  assert.ok(mountainSummary.includes('1 / 47'));
+  assert.ok(mountainSummary.includes('年份一致 0'));
+  assert.ok(mountainSummary.includes('多年份 1'));
+  assert.equal(await evaluate('window.__viewer.spotsHandle.layer.getSource().getSource().getFeatures().length'), 1);
+  await delay(300);
+  const mountainPoint = await evaluate(`(() => {
+    const viewer=window.__viewer;
+    const f=viewer.spotsHandle.layer.getSource().getSource().getFeatures()[0];
+    const pixel=viewer.map.getPixelFromCoordinate(f.getGeometry().getCoordinates());
+    const rect=document.querySelector('#map').getBoundingClientRect();
+    return {x:rect.left+pixel[0],y:rect.top+pixel[1]};
+  })()`);
+  await command('Input.dispatchMouseEvent', {type:'mousePressed',button:'left',clickCount:1,...mountainPoint});
+  await command('Input.dispatchMouseEvent', {type:'mouseReleased',button:'left',clickCount:1,...mountainPoint});
+  await delay(400);
+  assert.equal(await evaluate("document.querySelector('#popup').classList.contains('hidden')"), false);
+  const mountainEvidence = await evaluate("document.querySelector('.popup-evidence').textContent");
+  assert.ok(mountainEvidence.includes('2007/2018年'));
+  assert.ok(mountainEvidence.includes('多年份记录，按最早列示年份累计'));
+  assert.ok(mountainEvidence.includes('世界遗产关联：待核验'));
+  assert.ok(mountainEvidence.includes('尚无逐条坐标来源'));
+  // 殷墟列表与详情年份冲突，弹窗必须呈现两个原文及待核查状态。
+  await evaluate(`(() => {
+    const k=document.querySelector('#filter-keyword');k.value='殷墟';k.dispatchEvent(new Event('input',{bubbles:true}));
+    const year=document.querySelector('#filter-year');year.value='2011';year.dispatchEvent(new Event('input',{bubbles:true}));
+  })()`);
+  assert.ok((await evaluate("document.querySelector('#filter-summary').textContent")).includes('年份冲突 1'));
+  await delay(300);
+  const conflictPoint = await evaluate(`(() => {
+    const viewer=window.__viewer;
+    const f=viewer.spotsHandle.layer.getSource().getSource().getFeatures()[0];
+    const pixel=viewer.map.getPixelFromCoordinate(f.getGeometry().getCoordinates());
+    const rect=document.querySelector('#map').getBoundingClientRect();
+    return {x:rect.left+pixel[0],y:rect.top+pixel[1]};
+  })()`);
+  await command('Input.dispatchMouseEvent', {type:'mousePressed',button:'left',clickCount:1,...conflictPoint});
+  await command('Input.dispatchMouseEvent', {type:'mouseReleased',button:'left',clickCount:1,...conflictPoint});
+  await delay(400);
+  const conflictEvidence = await evaluate("document.querySelector('.popup-evidence').textContent");
+  assert.ok(conflictEvidence.includes('官方站内年份冲突，待核查'));
+  assert.ok(conflictEvidence.includes('2011年') && conflictEvidence.includes('2010年'));
+  assert.equal(await evaluate(`document.querySelector(".popup-evidence a[href*='id=34959']")?.href`),
+    'https://sjfw.mct.gov.cn/site/dataservice/culdetails?curId=10&id=34959');
   await evaluate(`(() => {
     const k=document.querySelector('#filter-keyword');k.value='不存在的景区';k.dispatchEvent(new Event('input',{bubbles:true}));
   })()`);
@@ -191,7 +242,7 @@ async function main() {
   const screenshot = await command('Page.captureScreenshot', { format: 'png' });
   fs.writeFileSync(path.join(root, 'logs', 'browser-mobile.png'), Buffer.from(screenshot.data, 'base64'));
   assert.equal(errors.length, 0, '页面交互出现运行时异常');
-  console.log('通过：Edge 初始化、筛选地图统计联动、弹窗字段级来源、空结果、重置、散点筛选与移动布局。');
+  console.log('通过：Edge 筛选地图统计联动、47 条年份口径、山海关多年份与殷墟站内冲突弹窗、空结果、重置与移动布局。');
 } finally {
   if (socket) socket.close();
   // 仅结束本测试启动的进程树；临时目录保持在 logs 内。
