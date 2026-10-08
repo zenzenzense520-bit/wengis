@@ -1,5 +1,6 @@
 import { filterSpots, categoryCounts } from '../data/filterSpots';
 import type { SpotFeature } from '../types/spot';
+import { ratingYearStatus } from '../data/spotEvidence.ts';
 
 // 新增筛选控件与样例统计联动，所有来自数据的文本使用 textContent。
 export function bindFilterPanel(features: SpotFeature[], onChange: (items: SpotFeature[]) => void): void {
@@ -34,8 +35,8 @@ export function bindFilterPanel(features: SpotFeature[], onChange: (items: SpotF
       dynasty: selects[2].value, untilYear: Number(year.value),
     });
     yearLabel.textContent = `${year.value} 年及以前`;
-    // 区分样例中的遗产标记与已经补齐来源的关联身份。
-    summary.textContent = `当前 ${filtered.length} / ${features.length} 个样例景区 · 遗产标记 ${filtered.filter(f => f.properties.worldHeritage).length} 个 · 已核验关联 ${filtered.filter(f => f.properties.evidence?.heritageSources.length).length} 个 · 年份已核验 ${filtered.filter(f => f.properties.evidence?.ratingSources.length).length} 个`;
+    // 站内冲突与多年份单列，不能因名单数值相同就升级为已核验。
+    summary.textContent = `当前 ${filtered.length} / ${features.length} 个样例景区 · 遗产标记 ${filtered.filter(f => f.properties.worldHeritage).length} 个 · 已核验关联 ${filtered.filter(f => f.properties.evidence?.heritageSources.length).length} 个 · 年份一致 ${filtered.filter(f => ratingYearStatus(f.properties) === 'single').length} 个 · 多年份 ${filtered.filter(f => ratingYearStatus(f.properties) === 'multiple').length} 个 · 年份冲突 ${filtered.filter(f => ratingYearStatus(f.properties) === 'conflict').length} 个`;
     empty.classList.toggle('hidden', filtered.length > 0);
     statistics.replaceChildren();
     const counts = categoryCounts(filtered);

@@ -20,13 +20,13 @@ export type SpotCategory =
 export interface SpotProperties {
   /** 景区唯一编号（与原始名单序号对应） */
   id: number;
-  /** 景区官方名称 */
+  /** 样例展示名称；完整官方名称记录在年份证据中 */
   name: string;
   /** 省级行政区 */
   province: string;
   /** 地级市/州/盟 */
   city: string;
-  /** 5A 评定年份（复评年份以 note 标注） */
+  /** 官方最早列示年份，用于累计筛选；多年份原文另存证据 */
   ratingYear: number;
   /** 文化类别 */
   category: SpotCategory;

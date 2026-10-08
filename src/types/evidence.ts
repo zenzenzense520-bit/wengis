@@ -1,4 +1,4 @@
-// 扩展年份证据和候选坐标，候选始终不代表已核验入口。
+// 保存官方年份原文与累计口径；年份证据不代表入口或逐年有效等级。
 export interface SourceMetadata {
   title: string;
   publisher: string;
@@ -15,6 +15,11 @@ export interface HeritageSource extends SourceMetadata {
 export interface RatingSource extends SourceMetadata {
   field: 'ratingYear';
   expectedValue: number;
+  officialName: string;
+  officialYearText: string;
+  yearBasis: 'single-listed' | 'earliest-listed';
+  detailYearText?: string;
+  detailUrl?: string;
 }
 
 export interface CoordinateSource extends SourceMetadata {
