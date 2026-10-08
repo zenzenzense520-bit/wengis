@@ -3,6 +3,7 @@ import type { SpotProperties } from '../types/spot';
 import { CATEGORY_COLORS } from '../config/layers';
 import { escapeHtml } from '../components/escapeHtml';
 import { renderEvidence } from '../components/evidencePanel';
+import { ratingYearStatus } from '../data/spotEvidence';
 
 // 景区信息弹窗（OpenLayers Overlay）
 
@@ -29,12 +30,15 @@ function renderContent(properties: SpotProperties): string {
     tags.push('<span class="tag tag-site">全国重点文保（待核验）</span>');
   }
   const note = properties.note ? `<p class="popup-note">${escapeHtml(properties.note)}</p>` : '';
+  // 优先显示官方年份原文，山海关双年份不能在主表里被压成单年。
+  const ratingSource = properties.evidence?.ratingSources[0];
+  const listedYears = ratingSource ? `${ratingSource.officialYearText}${ratingYearStatus(properties) === 'conflict' ? '（详情页年份冲突，待核查）' : ''}` : `${properties.ratingYear} 年（样例）`;
   return `
     <div class="popup-title">${escapeHtml(properties.name)}</div>
     <div class="popup-tags">${tags.join('')}</div>
     <table class="popup-table">
       <tr><td>地区</td><td>${escapeHtml(properties.province)} · ${escapeHtml(properties.city)}</td></tr>
-      <tr><td>5A 评定</td><td>${properties.ratingYear} 年</td></tr>
+      <tr><td>5A 列示年份</td><td>${escapeHtml(listedYears)}</td></tr>
     </table>
     ${note}
     ${renderEvidence(properties)}

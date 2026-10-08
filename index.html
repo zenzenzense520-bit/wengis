@@ -21,8 +21,9 @@
               <label class="filter-field">省份<select id="filter-province"><option value="">全部省份</option></select></label>
               <label class="filter-field">文化类别<select id="filter-category"><option value="">全部类别</option></select></label>
               <label class="filter-field">朝代记录<select id="filter-dynasty"><option value="">全部朝代记录</option></select></label>
-              <label class="filter-field">5A 评定截止年份<output id="year-label" for="filter-year"></output><input id="filter-year" type="range" step="1" /></label>
-              <p class="note">朝代按原始记录匹配；年份仅表示 5A 评定时间。</p>
+              <!-- 保留累计筛选，明确最早列示口径不等于历年有效等级。 -->
+              <label class="filter-field">5A 列示年份（累计截止）<output id="year-label" for="filter-year"></output><input id="filter-year" type="range" step="1" /></label>
+              <p class="note">朝代按原始记录匹配；年份按官方最早列示年份累计，不表示当年有效 5A 名录。</p>
               <button type="reset" class="reset-button">重置全部筛选</button>
             </form>
             <p id="filter-summary" role="status" aria-live="polite"></p>
@@ -71,7 +72,8 @@
             <p class="note">
               有有效配置时使用天地图，否则使用 ArcGIS。当前仅展示 47 个样例，
               坐标为 WGS84 近似值（约 1 km 精度），统计仅描述当前样例。
-              已为 5 个景区补齐遗产关联和评定年份来源，并记录坐标候选；候选不等于入口，原样例点位仍待核验，详见弹窗。
+              47 条已匹配文旅部 2025-03-11 名单：45 条年份一致，山海关为 2007/2018 多年份记录，殷墟列表与详情年份冲突，待核查。
+              5 条已核验遗产关联，并记录坐标候选；候选不等于入口，原样例点位仍待核验，详见弹窗。
             </p>
           </section>
         </aside>
