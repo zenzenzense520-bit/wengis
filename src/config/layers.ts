@@ -31,6 +31,25 @@ export const CATEGORY_COLORS: Record<SpotCategory, string> = {
 export const CLUSTER_DISTANCE = 48;
 export const CLUSTER_MIN_DISTANCE = 18;
 
+/** 省界面图层样式（浅色填充 + 深灰边界，衬托点位） */
+export const PROVINCE_FILL = 'rgba(250, 247, 242, 0.15)';
+export const PROVINCE_STROKE = 'rgba(120, 100, 80, 0.75)';
+export const PROVINCE_STROKE_WIDTH = 0.8;
+
+/** 核密度热力图参数（OpenLayers Heatmap，客户端核密度近似） */
+export const HEATMAP_RADIUS = 28;
+export const HEATMAP_BLUR = 32;
+export const HEATMAP_WEIGHT_HERITAGE = 1.0;
+export const HEATMAP_WEIGHT_NORMAL = 0.55;
+
+/** GeoServer 本地服务（FOSS 架构的 WMS/WFS 发布端，默认随 GeoServer 启动） */
+export const GEOSERVER_BASE_URL = 'http://localhost:8080/geoserver';
+export const GEOSERVER_WORKSPACE = 'wengis';
+export const WMS_SPOTS_LAYER = `${GEOSERVER_WORKSPACE}:ancient_5a`;
+export const WMS_PROVINCES_LAYER = `${GEOSERVER_WORKSPACE}:provinces`;
+export const WFS_URL = `${GEOSERVER_BASE_URL}/${GEOSERVER_WORKSPACE}/wfs`;
+export const WMS_URL = `${GEOSERVER_BASE_URL}/${GEOSERVER_WORKSPACE}/wms`;
+
 /** 天地图密钥：从 .env.local 读取（VITE_TIANDITU_KEY），不写入代码仓库 */
 export const TIANDITU_KEY = import.meta.env.VITE_TIANDITU_KEY ?? '';
 

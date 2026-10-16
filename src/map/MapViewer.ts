@@ -11,7 +11,6 @@ import {
   MIN_ZOOM,
   MAX_ZOOM,
   DEFAULT_BASEMAP,
-  CATEGORY_COLORS,
   type BasemapId,
 } from '../config/layers';
 import { createBasemap } from './baseLayers';
@@ -21,20 +20,49 @@ import {
   SPOT_PROPERTIES_KEY,
   type SpotsLayerHandle,
 } from './spotsLayer';
+import { createProvincesLayer, buildProvinceFeatures } from './provincesLayer';
+import { createHeatmapLayer, type HeatmapHandle } from './heatmapLayer';
+import {
+  createSpotsWmsLayer,
+  createProvincesWmsLayer,
+} from './serviceLayers';
 import { createPopup, type PopupHandle } from './popup';
-import type { SpotCollection, SpotProperties, SpotCategory } from '../types/spot';
+import { filterStore, matchesFilter } from '../state/filterStore';
+import type {
+  SpotCollection,
+  SpotProperties,
+  ProvinceCollection,
+} from '../types/spot';
 
-// 地图总装：底图、点位图层、弹窗、图层开关与图例
+// 地图总装：底图、省界、核密度、点位图层、弹窗，以及筛选联动
 
 export class MapViewer {
   private readonly map: Map;
   private readonly basemapGroup: LayerGroup;
   private readonly spotsHandle: SpotsLayerHandle;
+  private readonly heatmapHandle: HeatmapHandle;
+  private readonly provincesLayer: ReturnType<typeof createProvincesLayer>['layer'];
+  private readonly spotsWmsLayer: ReturnType<typeof createSpotsWmsLayer>;
+  private readonly provincesWmsLayer: ReturnType<typeof createProvincesWmsLayer>;
   private readonly popup: PopupHandle;
 
-  constructor(target: HTMLElement, popupElement: HTMLElement, data: SpotCollection) {
-    const features = buildFeatures(data);
-    this.spotsHandle = createSpotsLayer(features);
+  constructor(
+    target: HTMLElement,
+    popupElement: HTMLElement,
+    spotsData: SpotCollection,
+    provincesData: ProvinceCollection,
+  ) {
+    const spotFeatures = buildFeatures(spotsData);
+    this.spotsHandle = createSpotsLayer(spotFeatures);
+    this.heatmapHandle = createHeatmapLayer(this.spotsHandle.rawSource);
+
+    const provinceFeatures = buildProvinceFeatures(provincesData);
+    const provinceBundle = createProvincesLayer(provinceFeatures);
+    this.provincesLayer = provinceBundle.layer;
+
+    this.spotsWmsLayer = createSpotsWmsLayer();
+    this.provincesWmsLayer = createProvincesWmsLayer();
+
     this.popup = createPopup(popupElement);
 
     const initialBasemapLayers = createBasemap(DEFAULT_BASEMAP);
@@ -47,9 +75,16 @@ export class MapViewer {
       target,
       controls: defaultControls({ zoom: true, attribution: true, rotate: false }),
       overlays: [this.popup.overlay],
-      layers: [this.basemapGroup, this.spotsHandle.layer],
+      layers: [
+        this.basemapGroup,
+        this.provincesWmsLayer,
+        this.provincesLayer,
+        this.heatmapHandle.layer,
+        this.spotsWmsLayer,
+        this.spotsHandle.layer,
+      ],
       view: new View({
-        // 视图使用 Web Mercator（OSM 原生网格），数据坐标经 fromLonLat 转换
+        // 视图使用 Web Mercator，数据坐标经 fromLonLat 转换
         center: fromLonLat(DEFAULT_CENTER),
         zoom: DEFAULT_ZOOM,
         minZoom: MIN_ZOOM,
@@ -59,6 +94,7 @@ export class MapViewer {
 
     this.bindClick();
     this.bindControls();
+    this.bindFilter();
   }
 
   /** 点击点位：单点弹窗，聚合点放大 */
@@ -86,12 +122,31 @@ export class MapViewer {
   private bindControls(): void {
     const spotsToggle = document.getElementById('layer-spots') as HTMLInputElement | null;
     const clusterToggle = document.getElementById('layer-cluster') as HTMLInputElement | null;
+    const provincesToggle = document.getElementById('layer-provinces') as HTMLInputElement | null;
+    const heatmapToggle = document.getElementById('layer-heatmap') as HTMLInputElement | null;
+
     spotsToggle?.addEventListener('change', () => {
       this.spotsHandle.layer.setVisible(spotsToggle.checked);
     });
     clusterToggle?.addEventListener('change', () => {
       this.spotsHandle.setClusterEnabled(clusterToggle.checked);
     });
+    provincesToggle?.addEventListener('change', () => {
+      this.provincesLayer.setVisible(provincesToggle.checked);
+    });
+    heatmapToggle?.addEventListener('change', () => {
+      this.heatmapHandle.setVisible(heatmapToggle.checked);
+    });
+
+    const wmsSpotsToggle = document.getElementById('layer-wms-spots') as HTMLInputElement | null;
+    const wmsProvincesToggle = document.getElementById('layer-wms-provinces') as HTMLInputElement | null;
+    wmsSpotsToggle?.addEventListener('change', () => {
+      this.spotsWmsLayer.setVisible(wmsSpotsToggle.checked);
+    });
+    wmsProvincesToggle?.addEventListener('change', () => {
+      this.provincesWmsLayer.setVisible(wmsProvincesToggle.checked);
+    });
+
     document.querySelectorAll<HTMLInputElement>('input[name="basemap"]').forEach((radio) => {
       radio.addEventListener('change', () => {
         if (radio.checked) {
@@ -99,6 +154,18 @@ export class MapViewer {
         }
       });
     });
+  }
+
+  /** 订阅筛选仓库，驱动点位与核密度联动 */
+  private bindFilter(): void {
+    const apply = (): void => {
+      const state = filterStore.getState();
+      const predicate = (spot: SpotProperties): boolean => matchesFilter(spot, state);
+      this.spotsHandle.setFilter(predicate);
+      this.heatmapHandle.setFilter(predicate);
+    };
+    apply();
+    filterStore.subscribe(apply);
   }
 
   /** 切换底图（天地图含底图+注记两个图层） */
@@ -111,36 +178,44 @@ export class MapViewer {
     this.basemapGroup.setLayers(new Collection<BaseLayer>(layers));
   }
 
-  /** 渲染类别图例 */
-  renderLegend(): void {
-    const legend = document.getElementById('legend');
-    if (!legend) {
-      return;
-    }
-    const categories = Object.keys(CATEGORY_COLORS) as SpotCategory[];
-    legend.innerHTML = categories
-      .map(
-        (category) => `
-        <div class="legend-item">
-          <span class="legend-dot" style="background:${CATEGORY_COLORS[category]}"></span>
-          <span>${category}</span>
-        </div>`,
-      )
-      .join('');
-  }
-
   /** 经纬度转地图视口像素坐标（供定位与自动化测试使用） */
   getPixelFromLonLat(lng: number, lat: number): [number, number] | undefined {
     const pixel = this.map.getPixelFromCoordinate(fromLonLat([lng, lat]));
     return pixel ? [pixel[0], pixel[1]] : undefined;
   }
 
-  /** 适配视野到全部点位 */
+  /** 切换点位数据源（本地 GeoJSON / GeoServer WFS），重算筛选与核密度权重 */
+  setSpotsData(data: SpotCollection): void {
+    const features = buildFeatures(data);
+    this.spotsHandle.replaceFeatures(features);
+    const state = filterStore.getState();
+    const predicate = (spot: SpotProperties): boolean => matchesFilter(spot, state);
+    this.spotsHandle.setFilter(predicate);
+    this.heatmapHandle.setFilter(predicate);
+    this.fitToSpots();
+  }
+
+  /** 点位 WMS 瓦片图层显隐 */
+  setWmsSpotsVisible(visible: boolean): void {
+    this.spotsWmsLayer.setVisible(visible);
+  }
+
+  /** 省界 WMS 瓦片图层显隐 */
+  setWmsProvincesVisible(visible: boolean): void {
+    this.provincesWmsLayer.setVisible(visible);
+  }
+
+  /** 适配视野到全部点位（左侧 padding 为侧边栏预留，窄屏自适应） */
   fitToSpots(): void {
-    const source = this.spotsHandle.layer.getSource();
-    const extent = source?.getExtent();
-    if (extent && extent.every((v) => Number.isFinite(v))) {
-      this.map.getView().fit(extent, { padding: [40, 40, 40, 320], maxZoom: 12 });
+    const extent = this.spotsHandle.rawSource.getExtent();
+    const size = this.map.getSize();
+    if (!extent || !extent.every((v) => Number.isFinite(v)) || !size) {
+      return;
     }
+    const leftPadding = Math.min(320, Math.round(size[0] * 0.32));
+    this.map.getView().fit(extent, {
+      padding: [40, 40, 40, leftPadding],
+      maxZoom: 12,
+    });
   }
 }

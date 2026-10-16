@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>WENGIS 文脉地理信息系统</title>
   </head>
   <body>
@@ -10,7 +11,9 @@
       <header class="top-bar">
         <h1>WENGIS 文脉地理信息系统</h1>
         <span class="subtitle">全国古代类 5A 级旅游景区时空可视化平台</span>
+        <button id="charts-toggle" class="charts-toggle" type="button">统计分析</button>
       </header>
+      <div id="timeline-bar" class="timeline-bar"></div>
       <div class="layout">
         <aside class="side-panel">
           <section class="panel-block">
@@ -39,28 +42,64 @@
           <section class="panel-block">
             <h2>图层控制</h2>
             <label class="layer-toggle">
+              <input type="checkbox" id="layer-provinces" checked />
+              省级行政区面
+            </label>
+            <label class="layer-toggle">
               <input type="checkbox" id="layer-spots" checked />
-              古代类 5A 景区（样例）
+              古代类 5A 景区（148 处）
             </label>
             <label class="layer-toggle">
               <input type="checkbox" id="layer-cluster" checked />
               聚合显示
             </label>
+            <label class="layer-toggle">
+              <input type="checkbox" id="layer-heatmap" />
+              核密度分析
+            </label>
+            <label class="layer-toggle">
+              <input type="checkbox" id="layer-wms-spots" />
+              GeoServer WMS 点（服务端渲染）
+            </label>
+            <label class="layer-toggle">
+              <input type="checkbox" id="layer-wms-provinces" />
+              GeoServer WMS 省界
+            </label>
           </section>
           <section class="panel-block">
-            <h2>类别图例</h2>
-            <div id="legend" class="legend"></div>
+            <h2>点位数据源</h2>
+            <label class="layer-toggle">
+              <input type="radio" name="data-source" value="local" checked />
+              本地 GeoJSON（默认）
+            </label>
+            <label class="layer-toggle">
+              <input type="radio" name="data-source" value="wfs" />
+              GeoServer WFS 矢量
+            </label>
+            <p id="data-source-status" class="note"></p>
+          </section>
+          <section class="panel-block">
+            <h2>筛选</h2>
+            <div id="filter-panel"></div>
           </section>
           <section class="panel-block">
             <h2>数据说明</h2>
             <p class="note">
-              默认底图为天地图（CGCS2000，中文标注），可切换 ArcGIS/OSM；
-              样例坐标为 WGS84 近似值，正式数据将经天地图核对。
+              底图为天地图（CGCS2000，中文标注），数据统一 WGS84；
+              共 148 处古代类 5A 景区，坐标来自 47 处权威样例与天地图地理编码（省界校验）。
+              时间轴按最早始建朝代归组，勾选"累计显示"可查看历史演进。
             </p>
           </section>
         </aside>
         <main id="map" class="map-container"></main>
       </div>
+      <aside id="charts-drawer" class="charts-drawer">
+        <div class="charts-drawer-head">
+          <span>统计分析（随筛选联动）</span>
+          <button id="charts-close" class="charts-close" type="button" aria-label="关闭">×</button>
+        </div>
+        <div id="charts-panel" class="charts-panel"></div>
+      </aside>
       <div id="popup" class="ol-popup hidden">
         <div id="popup-content"></div>
       </div>

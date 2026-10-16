@@ -1,6 +1,15 @@
-import type { SpotCollection, SpotFeature, SpotProperties } from '../types/spot';
+import type {
+  SpotCollection,
+  SpotFeature,
+  SpotProperties,
+  ProvinceCollection,
+  ProvinceFeature,
+} from '../types/spot';
+import { DYNASTY_ORDER } from '../config/dynasty';
 
-// 景区数据加载与结构校验（任何解析失败都显式抛出，禁止静默吞异常）
+// 数据加载与结构校验（任何解析失败都显式抛出，禁止静默吞异常）
+
+const DYNASTY_SET = new Set<string>(DYNASTY_ORDER);
 
 function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
@@ -8,6 +17,10 @@ function isNonEmptyString(value: unknown): value is string {
 
 function isNumber(value: unknown): value is number {
   return typeof value === 'number' && Number.isFinite(value);
+}
+
+function isBoolean(value: unknown): value is boolean {
+  return typeof value === 'boolean';
 }
 
 function validateProperties(props: unknown): props is SpotProperties {
@@ -23,8 +36,10 @@ function validateProperties(props: unknown): props is SpotProperties {
     isNumber(p.ratingYear) &&
     isNonEmptyString(p.category) &&
     isNonEmptyString(p.dynasty) &&
-    typeof p.worldHeritage === 'boolean' &&
-    typeof p.majorSite === 'boolean'
+    isNonEmptyString(p.dynastyGroup) &&
+    DYNASTY_SET.has(p.dynastyGroup) &&
+    isBoolean(p.worldHeritage) &&
+    isBoolean(p.majorSite)
   );
 }
 
@@ -47,8 +62,26 @@ function validateFeature(feature: unknown): feature is SpotFeature {
   return validPoint && validateProperties(f.properties);
 }
 
-/** 加载并校验 GeoJSON 数据 */
-export async function loadSpots(url: string): Promise<SpotCollection> {
+function validateProvinceFeature(feature: unknown): feature is ProvinceFeature {
+  if (typeof feature !== 'object' || feature === null) {
+    return false;
+  }
+  const f = feature as Record<string, unknown>;
+  if (f.type !== 'Feature' || typeof f.geometry !== 'object' || f.geometry === null) {
+    return false;
+  }
+  const geometry = f.geometry as Record<string, unknown>;
+  const validGeometry =
+    (geometry.type === 'Polygon' || geometry.type === 'MultiPolygon') &&
+    Array.isArray(geometry.coordinates);
+  if (!validGeometry || typeof f.properties !== 'object' || f.properties === null) {
+    return false;
+  }
+  const p = f.properties as Record<string, unknown>;
+  return isNonEmptyString(p.adcode) && isNonEmptyString(p.name);
+}
+
+async function fetchJson(url: string): Promise<unknown> {
   let response: Response;
   try {
     response = await fetch(url);
@@ -58,8 +91,10 @@ export async function loadSpots(url: string): Promise<SpotCollection> {
   if (!response.ok) {
     throw new Error(`数据请求失败：HTTP ${response.status} ${response.statusText}`);
   }
+  return response.json();
+}
 
-  const json: unknown = await response.json();
+function asFeatureCollection(json: unknown): { features: unknown[] } {
   if (typeof json !== 'object' || json === null) {
     throw new Error('数据格式错误：根节点不是对象');
   }
@@ -67,12 +102,25 @@ export async function loadSpots(url: string): Promise<SpotCollection> {
   if (collection.type !== 'FeatureCollection' || !Array.isArray(collection.features)) {
     throw new Error('数据格式错误：不是 FeatureCollection');
   }
+  return { features: collection.features as unknown[] };
+}
+
+/** 加载并校验景区点 GeoJSON */
+export async function loadSpots(url: string): Promise<SpotCollection> {
+  const collection = asFeatureCollection(await fetchJson(url));
   const invalidIndex = collection.features.findIndex((f) => !validateFeature(f));
   if (invalidIndex >= 0) {
-    throw new Error(`数据格式错误：第 ${invalidIndex + 1} 个要素结构不合法`);
+    throw new Error(`数据格式错误：第 ${invalidIndex + 1} 个景区要素结构不合法`);
   }
-  return {
-    type: 'FeatureCollection',
-    features: collection.features as SpotFeature[],
-  };
+  return { type: 'FeatureCollection', features: collection.features as SpotFeature[] };
+}
+
+/** 加载并校验省界面 GeoJSON */
+export async function loadProvinces(url: string): Promise<ProvinceCollection> {
+  const collection = asFeatureCollection(await fetchJson(url));
+  const invalidIndex = collection.features.findIndex((f) => !validateProvinceFeature(f));
+  if (invalidIndex >= 0) {
+    throw new Error(`数据格式错误：第 ${invalidIndex + 1} 个省界要素结构不合法`);
+  }
+  return { type: 'FeatureCollection', features: collection.features as ProvinceFeature[] };
 }

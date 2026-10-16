@@ -1,0 +1,3859 @@
+{
+ "type": "FeatureCollection",
+ "crs": {
+  "type": "name",
+  "properties": {
+   "name": "EPSG:4326"
+  }
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.397,
+     39.918
+    ]
+   },
+   "properties": {
+    "id": 1,
+    "name": "故宫博物院",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2007,
+    "category": "宫殿坛庙",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "故宫博物院"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.4122,
+     39.8823
+    ]
+   },
+   "properties": {
+    "id": 2,
+    "name": "天坛公园",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2007,
+    "category": "宫殿坛庙",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天坛公园"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.274,
+     39.999
+    ]
+   },
+   "properties": {
+    "id": 3,
+    "name": "颐和园",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2007,
+    "category": "古典园林",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "颐和园"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.3862,
+     39.9372
+    ]
+   },
+   "properties": {
+    "id": 4,
+    "name": "恭王府景区",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2012,
+    "category": "古典园林",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "恭王府景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.301928,
+     40.008486
+    ]
+   },
+   "properties": {
+    "id": 5,
+    "name": "圆明园遗址公园景区",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2019,
+    "category": "古典园林",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "清代皇家园林遗址，1860年遭焚毁后为遗址公园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "圆明园遗址公园"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.245,
+     40.256
+    ]
+   },
+   "properties": {
+    "id": 6,
+    "name": "明十三陵景区",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2011,
+    "category": "陵寝墓葬",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "明清皇家陵寝世界遗产组成部分，坐标取长陵",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "明十三陵景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.0243,
+     40.3593
+    ]
+   },
+   "properties": {
+    "id": 7,
+    "name": "八达岭—慕田峪长城旅游区",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2007,
+    "category": "关隘长城",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "长城世界遗产，坐标取八达岭",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "八达岭—慕田峪长城旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.681695,
+     39.906777
+    ]
+   },
+   "properties": {
+    "id": 8,
+    "name": "北京（通州）大运河文化旅游景区",
+    "province": "北京市",
+    "city": "北京市",
+    "ratingYear": 2024,
+    "category": "复合人文",
+    "dynasty": "隋至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "大运河世界遗产通州段，坐标取燃灯佛舍利塔",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "大运河文化旅游景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.26842,
+     40.0919
+    ]
+   },
+   "properties": {
+    "id": 9,
+    "name": "盘山风景名胜区",
+    "province": "天津市",
+    "city": "天津市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "京东佛教名山，盘山石刻为全国重点文保，自然与人文复合",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天津盘山风景名胜区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.939,
+     40.999
+    ]
+   },
+   "properties": {
+    "id": 10,
+    "name": "承德市承德避暑山庄及周围寺庙景区",
+    "province": "河北省",
+    "city": "承德市",
+    "ratingYear": 2007,
+    "category": "古典园林",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "承德避暑山庄及周围寺庙景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.66,
+     40.19
+    ]
+   },
+   "properties": {
+    "id": 11,
+    "name": "唐山市清东陵景区",
+    "province": "河北省",
+    "city": "唐山市",
+    "ratingYear": 2015,
+    "category": "陵寝墓葬",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "清东陵景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     115.34491,
+     39.3509
+    ]
+   },
+   "properties": {
+    "id": 12,
+    "name": "保定市清西陵景区",
+    "province": "河北省",
+    "city": "保定市",
+    "ratingYear": 2019,
+    "category": "陵寝墓葬",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "清西陵景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.756,
+     40.009
+    ]
+   },
+   "properties": {
+    "id": 13,
+    "name": "秦皇岛市山海关景区",
+    "province": "河北省",
+    "city": "秦皇岛市",
+    "ratingYear": 2007,
+    "category": "关隘长城",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "2015年被取消5A等级，2018年复牌；坐标取天下第一关",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "秦皇岛市山海关景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.24693,
+     40.67855
+    ]
+   },
+   "properties": {
+    "id": 14,
+    "name": "承德市金山岭长城景区",
+    "province": "河北省",
+    "city": "承德市",
+    "ratingYear": 2020,
+    "category": "关隘长城",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "金山岭长城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.72605,
+     36.69928
+    ]
+   },
+   "properties": {
+    "id": 15,
+    "name": "邯郸市广府古城景区",
+    "province": "河北省",
+    "city": "邯郸市",
+    "ratingYear": 2017,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "广府古城墙为全国重点文保，太极拳发源地",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "永年区广府古城旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.60928,
+     36.63881
+    ]
+   },
+   "properties": {
+    "id": 16,
+    "name": "邯郸市娲皇宫景区",
+    "province": "河北省",
+    "city": "邯郸市",
+    "ratingYear": 2015,
+    "category": "宗教寺观",
+    "dynasty": "北齐至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "北齐摩崖刻经与祭祀建筑群",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "娲皇宫旅游路"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.137,
+     40.109
+    ]
+   },
+   "properties": {
+    "id": 17,
+    "name": "大同市云冈石窟景区",
+    "province": "山西省",
+    "city": "大同市",
+    "ratingYear": 2007,
+    "category": "石窟石刻",
+    "dynasty": "北魏",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "云冈石窟景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.587,
+     38.96
+    ]
+   },
+   "properties": {
+    "id": 18,
+    "name": "忻州市五台山风景名胜区",
+    "province": "山西省",
+    "city": "忻州市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化景观，佛教四大名山之一，坐标取显通寺",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "五台山风景名胜区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.176,
+     37.189
+    ]
+   },
+   "properties": {
+    "id": 19,
+    "name": "晋中市平遥古城景区",
+    "province": "山西省",
+    "city": "晋中市",
+    "ratingYear": 2015,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "平遥古城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.43557,
+     37.708605
+    ]
+   },
+   "properties": {
+    "id": 20,
+    "name": "太原市晋祠天龙山景区",
+    "province": "山西省",
+    "city": "太原市",
+    "ratingYear": 2024,
+    "category": "复合人文",
+    "dynasty": "北齐至宋",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "晋祠（北宋圣母殿）与天龙山石窟复合，坐标取晋祠",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "太原市晋祠博物馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.875488,
+     39.08252
+    ]
+   },
+   "properties": {
+    "id": 21,
+    "name": "忻州市雁门关景区",
+    "province": "山西省",
+    "city": "忻州市",
+    "ratingYear": 2017,
+    "category": "关隘长城",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "长城世界遗产关隘",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "雁门关镇人民政府"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.430496,
+     37.405858
+    ]
+   },
+   "properties": {
+    "id": 22,
+    "name": "晋中市乔家大院景区",
+    "province": "山西省",
+    "city": "晋中市",
+    "ratingYear": 2014,
+    "category": "古村落",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "晋商民居建筑群；2019年摘牌、2024年复牌",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "祁县乔家大院民俗博物馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.57706,
+     35.51441
+    ]
+   },
+   "properties": {
+    "id": 23,
+    "name": "晋城市皇城相府生态文化旅游区",
+    "province": "山西省",
+    "city": "晋城市",
+    "ratingYear": 2011,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "陈廷敬故居，官宅民居建筑群",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "皇城相府生态文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     111.88765,
+     37.02195
+    ]
+   },
+   "properties": {
+    "id": 24,
+    "name": "晋中市绵山风景区",
+    "province": "山西省",
+    "city": "晋中市",
+    "ratingYear": 2013,
+    "category": "历史名山",
+    "dynasty": "春秋至清",
+    "dynastyGroup": "先秦",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "寒食节（介子推）发源地，现存宫观多为1990年代复建",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "介休绵山公园"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.784378,
+     39.37104
+    ]
+   },
+   "properties": {
+    "id": 25,
+    "name": "鄂尔多斯市成吉思汗陵旅游区",
+    "province": "内蒙古自治区",
+    "city": "鄂尔多斯市",
+    "ratingYear": 2011,
+    "category": "陵寝墓葬",
+    "dynasty": "元（祭祀传承）",
+    "dynastyGroup": "元",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "成吉思汗陵为全国重点文保，现存陵宫为1954年迁建，蒙古族祭祀圣地",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "成吉思汗陵旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     125.41075,
+     41.32494
+    ]
+   },
+   "properties": {
+    "id": 26,
+    "name": "本溪市五女山景区",
+    "province": "辽宁省",
+    "city": "本溪市",
+    "ratingYear": 2024,
+    "category": "古遗址",
+    "dynasty": "汉至南北朝",
+    "dynastyGroup": "汉",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "高句丽早期都城纥升骨城，高句丽世界遗产组成部分",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "五女山山城风景区停车场"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     123.14029,
+     41.04654
+    ]
+   },
+   "properties": {
+    "id": 27,
+    "name": "鞍山市千山景区",
+    "province": "辽宁省",
+    "city": "鞍山市",
+    "ratingYear": 2017,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "东北佛道名山，千山古建筑群为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "鞍山市公安局千山风景区分局千山派出所"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     126.21422,
+     41.14485
+    ]
+   },
+   "properties": {
+    "id": 28,
+    "name": "通化市高句丽文物古迹旅游景区",
+    "province": "吉林省",
+    "city": "通化市",
+    "ratingYear": 2019,
+    "category": "古遗址",
+    "dynasty": "汉至南北朝",
+    "dynastyGroup": "汉",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "集安国内城、丸都山城、好太王碑，高句丽世界遗产",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "好太王碑"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     125.342289,
+     43.904154
+    ]
+   },
+   "properties": {
+    "id": 29,
+    "name": "长春市伪满皇宫博物馆",
+    "province": "吉林省",
+    "city": "长春市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "伪满皇宫旧址，清末至民国宫殿旧址",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "伪满皇宫博物院"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.628,
+     31.325
+    ]
+   },
+   "properties": {
+    "id": 30,
+    "name": "苏州市苏州园林（拙政园－留园－虎丘）",
+    "province": "江苏省",
+    "city": "苏州市",
+    "ratingYear": 2007,
+    "category": "古典园林",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "苏州古典园林世界遗产，坐标取拙政园",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "苏州园林（拙政园·留园·虎丘）"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.844,
+     31.116
+    ]
+   },
+   "properties": {
+    "id": 31,
+    "name": "苏州市周庄古镇景区",
+    "province": "江苏省",
+    "city": "苏州市",
+    "ratingYear": 2007,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "江南水乡古镇（世界遗产预备名单）",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "周庄古镇景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.718325,
+     31.159487
+    ]
+   },
+   "properties": {
+    "id": 32,
+    "name": "苏州市同里古镇景区",
+    "province": "江苏省",
+    "city": "苏州市",
+    "ratingYear": 2010,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "坐标取退思园（全国重点文保）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "同里古镇景区东溪桥入口"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.79,
+     32.023
+    ]
+   },
+   "properties": {
+    "id": 33,
+    "name": "南京市夫子庙－秦淮风光带",
+    "province": "江苏省",
+    "city": "南京市",
+    "ratingYear": 2010,
+    "category": "复合人文",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "孔庙、江南贡院与秦淮河历史街区复合",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "夫子庙·秦淮风光带景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.828157,
+     32.050384
+    ]
+   },
+   "properties": {
+    "id": 34,
+    "name": "南京市钟山风景名胜区－中山陵园风景区",
+    "province": "江苏省",
+    "city": "南京市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "明至民国",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "明孝陵（世界遗产）与中山陵（近代）复合，坐标取明孝陵",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "明孝陵"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.409365,
+     32.406122
+    ]
+   },
+   "properties": {
+    "id": 35,
+    "name": "扬州市瘦西湖风景区",
+    "province": "江苏省",
+    "city": "扬州市",
+    "ratingYear": 2010,
+    "category": "古典园林",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "湖上园林群，大运河世界遗产点，坐标取五亭桥",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "扬州瘦西湖名宿公寓"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.446761,
+     32.124709
+    ]
+   },
+   "properties": {
+    "id": 36,
+    "name": "镇江市金山·焦山·北固山风景区",
+    "province": "江苏省",
+    "city": "镇江市",
+    "ratingYear": 2012,
+    "category": "历史名山",
+    "dynasty": "三国至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "长江文化名山，焦山碑林为全国重点文保，坐标取金山寺",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "镇江金山寺食品有限公司"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.266864,
+     31.581803
+    ]
+   },
+   "properties": {
+    "id": 37,
+    "name": "无锡市惠山古镇景区",
+    "province": "江苏省",
+    "city": "无锡市",
+    "ratingYear": 2019,
+    "category": "历史街区",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "惠山镇祠堂群为全国重点文保，坐标取寄畅园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "寄畅园南门"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.93165,
+     31.70144
+    ]
+   },
+   "properties": {
+    "id": 38,
+    "name": "常州市春秋淹城旅游区",
+    "province": "江苏省",
+    "city": "常州市",
+    "ratingYear": 2017,
+    "category": "古遗址",
+    "dynasty": "春秋",
+    "dynastyGroup": "先秦",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "春秋三城三河遗址（全国重点文保），景区含现代春秋乐园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "常州市武进中国春秋淹城旅游区管理委员会"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.181045,
+     34.408766
+    ]
+   },
+   "properties": {
+    "id": 39,
+    "name": "连云港市花果山景区",
+    "province": "江苏省",
+    "city": "连云港市",
+    "ratingYear": 2016,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "西游记文化名山，海清寺塔为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "连云港花果山国际机场"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.307326,
+     31.7836
+    ]
+   },
+   "properties": {
+    "id": 40,
+    "name": "镇江市茅山景区",
+    "province": "江苏省",
+    "city": "镇江市",
+    "ratingYear": 2014,
+    "category": "历史名山",
+    "dynasty": "南朝至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "道教上清派发源地，坐标取九霄万福宫",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "句容茅山风景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.85876,
+     32.034839
+    ]
+   },
+   "properties": {
+    "id": 41,
+    "name": "南通市濠河风景区",
+    "province": "江苏省",
+    "city": "南通市",
+    "ratingYear": 2012,
+    "category": "复合人文",
+    "dynasty": "宋至民国",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "古护城河环濠河博物馆群，含南通博物苑（全国重点文保）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "南通濠河景区希尔顿花园酒店"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.19722,
+     34.25458
+    ]
+   },
+   "properties": {
+    "id": 42,
+    "name": "徐州市云龙湖景区",
+    "province": "江苏省",
+    "city": "徐州市",
+    "ratingYear": 2016,
+    "category": "复合人文",
+    "dynasty": "汉、北魏",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "含西汉楚王陵（全国重点文保）与云龙山北魏兴化寺大石佛",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "徐州市云龙区子房街道综合文化站"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.145,
+     30.245
+    ]
+   },
+   "properties": {
+    "id": 43,
+    "name": "杭州市杭州西湖风景区",
+    "province": "浙江省",
+    "city": "杭州市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化景观",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "杭州西湖风景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.492,
+     30.746
+    ]
+   },
+   "properties": {
+    "id": 44,
+    "name": "嘉兴市乌镇古镇旅游区",
+    "province": "浙江省",
+    "city": "嘉兴市",
+    "ratingYear": 2010,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "江南水乡古镇（世界遗产预备名单）",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "乌镇古镇旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.883611,
+     30.942178
+    ]
+   },
+   "properties": {
+    "id": 45,
+    "name": "嘉兴市西塘古镇旅游区",
+    "province": "浙江省",
+    "city": "嘉兴市",
+    "ratingYear": 2017,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "江南水乡古镇（世界遗产预备名单）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "西塘古镇保护与旅游开发管理委员会"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.426807,
+     30.87097
+    ]
+   },
+   "properties": {
+    "id": 46,
+    "name": "湖州市南浔古镇景区",
+    "province": "浙江省",
+    "city": "湖州市",
+    "ratingYear": 2015,
+    "category": "古城古镇",
+    "dynasty": "明清至民国",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "嘉业堂藏书楼、张石铭旧宅为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "南浔古镇景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     122.384779,
+     29.98631
+    ]
+   },
+   "properties": {
+    "id": 47,
+    "name": "舟山市普陀山风景区",
+    "province": "浙江省",
+    "city": "舟山市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "佛教四大名山（观音道场），坐标取普济寺",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "普济寺站"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.042909,
+     29.173405
+    ]
+   },
+   "properties": {
+    "id": 48,
+    "name": "台州市天台山景区",
+    "province": "浙江省",
+    "city": "台州市",
+    "ratingYear": 2015,
+    "category": "历史名山",
+    "dynasty": "隋至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "佛教天台宗发源地，国清寺为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天台山国清讲寺"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.120437,
+     28.840187
+    ]
+   },
+   "properties": {
+    "id": 49,
+    "name": "台州市台州府城文化旅游区",
+    "province": "浙江省",
+    "city": "台州市",
+    "ratingYear": 2022,
+    "category": "古城古镇",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "台州府城墙（江南长城）为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "台州府城文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.539136,
+     29.870373
+    ]
+   },
+   "properties": {
+    "id": 50,
+    "name": "宁波市天一阁·月湖景区",
+    "province": "浙江省",
+    "city": "宁波市",
+    "ratingYear": 2018,
+    "category": "复合人文",
+    "dynasty": "明至清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "天一阁为明代藏书楼，全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天一阁·月湖景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.586237,
+     29.994513
+    ]
+   },
+   "properties": {
+    "id": 51,
+    "name": "绍兴市鲁迅故里·沈园景区",
+    "province": "浙江省",
+    "city": "绍兴市",
+    "ratingYear": 2012,
+    "category": "复合人文",
+    "dynasty": "宋至民国",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "沈园（南宋园林）与鲁迅故里（近代）复合，坐标取沈园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "沈园社区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.477635,
+     28.294326
+    ]
+   },
+   "properties": {
+    "id": 52,
+    "name": "衢州市江郎山·廿八都旅游区",
+    "province": "浙江省",
+    "city": "衢州市",
+    "ratingYear": 2017,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "廿八都古建筑群为全国重点文保；江郎山为世界自然遗产（中国丹霞）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "廿八都古镇"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.053201,
+     28.724079
+    ]
+   },
+   "properties": {
+    "id": 53,
+    "name": "丽水市缙云仙都景区",
+    "province": "浙江省",
+    "city": "丽水市",
+    "ratingYear": 2019,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "仙都摩崖题记为全国重点文保，黄帝文化与道教名山",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "缙云仙都汽校"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.952142,
+     27.919369
+    ]
+   },
+   "properties": {
+    "id": 54,
+    "name": "温州市刘伯温故里景区",
+    "province": "浙江省",
+    "city": "温州市",
+    "ratingYear": 2020,
+    "category": "宫殿坛庙",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "刘基庙、墓为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "浙江省温州市文成县南田镇九都村九都L449号刘基庙"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     121.285138,
+     29.683211
+    ]
+   },
+   "properties": {
+    "id": 55,
+    "name": "宁波市溪口－滕头旅游景区",
+    "province": "浙江省",
+    "city": "宁波市",
+    "ratingYear": 2010,
+    "category": "复合人文",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "蒋氏故居为全国重点文保，坐标取丰镐房",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "永易充溪口镇蒋氏故居溪南停车场充电站"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.170154,
+     30.124905
+    ]
+   },
+   "properties": {
+    "id": 56,
+    "name": "黄山市黄山风景区",
+    "province": "安徽省",
+    "city": "黄山市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化与自然双遗产，坐标取玉屏楼",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "玉屏楼宾馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.986,
+     30.004
+    ]
+   },
+   "properties": {
+    "id": 57,
+    "name": "黄山市皖南古村落－西递宏村",
+    "province": "安徽省",
+    "city": "黄山市",
+    "ratingYear": 2011,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "坐标取宏村月沼",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "皖南古村落·西递宏村"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.090719,
+     31.057163
+    ]
+   },
+   "properties": {
+    "id": 58,
+    "name": "池州市九华山风景区",
+    "province": "安徽省",
+    "city": "池州市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "佛教四大名山（地藏道场），坐标取化城寺",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "九华山"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.491647,
+     30.65625
+    ]
+   },
+   "properties": {
+    "id": 59,
+    "name": "安庆市天柱山风景区",
+    "province": "安徽省",
+    "city": "安庆市",
+    "ratingYear": 2011,
+    "category": "历史名山",
+    "dynasty": "汉至清",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "古南岳、禅宗三祖道场，山谷流泉摩崖石刻为全国重点文保；同时为世界地质公园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天柱山"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.429795,
+     29.867206
+    ]
+   },
+   "properties": {
+    "id": 60,
+    "name": "黄山市古徽州文化旅游区",
+    "province": "安徽省",
+    "city": "黄山市",
+    "ratingYear": 2014,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "徽州古城、棠樾牌坊群、许国石坊等，坐标取许国石坊",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "徽州古城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.241266,
+     31.513184
+    ]
+   },
+   "properties": {
+    "id": 61,
+    "name": "合肥市三河古镇景区",
+    "province": "安徽省",
+    "city": "合肥市",
+    "ratingYear": 2015,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "皖中水乡古镇，三河古镇为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "三河古镇东门"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.666595,
+     30.079413
+    ]
+   },
+   "properties": {
+    "id": 62,
+    "name": "宣城市龙川景区",
+    "province": "安徽省",
+    "city": "宣城市",
+    "ratingYear": 2012,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "绩溪龙川胡氏宗祠为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "龙川村"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.282799,
+     32.285448
+    ]
+   },
+   "properties": {
+    "id": 63,
+    "name": "滁州市琅琊山景区",
+    "province": "安徽省",
+    "city": "滁州市",
+    "ratingYear": 2024,
+    "category": "历史名山",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "醉翁亭、琅琊山摩崖石刻为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "醉翁亭"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.5273,
+     31.6637
+    ]
+   },
+   "properties": {
+    "id": 64,
+    "name": "马鞍山市长江采石矶文化生态旅游区",
+    "province": "安徽省",
+    "city": "马鞍山市",
+    "ratingYear": 2020,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "李白文化，采石矶遗址（太白楼）为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "马鞍山采石矶涂料有限公司"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.971,
+     24.662
+    ]
+   },
+   "properties": {
+    "id": 65,
+    "name": "福建土楼（永定·南靖）旅游景区",
+    "province": "福建省",
+    "city": "龙岩市",
+    "ratingYear": 2011,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "福建土楼世界遗产，坐标取永定高北承启楼",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "福建土楼（永定·南靖）旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.067,
+     24.449
+    ]
+   },
+   "properties": {
+    "id": 66,
+    "name": "厦门市鼓浪屿风景名胜区",
+    "province": "福建省",
+    "city": "厦门市",
+    "ratingYear": 2007,
+    "category": "历史街区",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "历史国际社区世界文化遗产",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "鼓浪屿风景名胜区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.297,
+     26.083
+    ]
+   },
+   "properties": {
+    "id": 67,
+    "name": "福州市三坊七巷景区",
+    "province": "福建省",
+    "city": "福州市",
+    "ratingYear": 2015,
+    "category": "历史街区",
+    "dynasty": "晋至民国",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "三坊七巷景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.988261,
+     27.652118
+    ]
+   },
+   "properties": {
+    "id": 68,
+    "name": "南平市武夷山风景名胜区",
+    "province": "福建省",
+    "city": "南平市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化与自然双遗产，坐标取天游峰",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天游峰路"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.59456,
+     24.94751
+    ]
+   },
+   "properties": {
+    "id": 69,
+    "name": "泉州市清源山风景名胜区",
+    "province": "福建省",
+    "city": "泉州市",
+    "ratingYear": 2012,
+    "category": "历史名山",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "老君岩造像为全国重点文保，泉州世界海洋商贸中心遗产点",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "老君岩造像"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     119.01197,
+     25.35636
+    ]
+   },
+   "properties": {
+    "id": 70,
+    "name": "莆田市湄洲岛妈祖文化旅游区",
+    "province": "福建省",
+    "city": "莆田市",
+    "ratingYear": 2020,
+    "category": "宗教寺观",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "妈祖庙为全国重点文保，妈祖信俗为人类非物质文化遗产",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "壶山极高明湄洲妈祖分联天后圣宫"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     115.983068,
+     29.567509
+    ]
+   },
+   "properties": {
+    "id": 71,
+    "name": "九江市庐山市庐山风景名胜区",
+    "province": "江西省",
+    "city": "九江市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化景观",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "九江市庐山风景名胜区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.0327,
+     28.04677
+    ]
+   },
+   "properties": {
+    "id": 72,
+    "name": "鹰潭市贵溪市龙虎山风景名胜区",
+    "province": "江西省",
+    "city": "鹰潭市",
+    "ratingYear": 2012,
+    "category": "历史名山",
+    "dynasty": "汉至清",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "道教正一派发源地，大上清宫遗址、嗣汉天师府；同时为世界自然遗产（中国丹霞）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "嗣汉天师府"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.04731,
+     29.37249
+    ]
+   },
+   "properties": {
+    "id": 73,
+    "name": "上饶市婺源县江湾景区",
+    "province": "江西省",
+    "city": "上饶市",
+    "ratingYear": 2013,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "婺源明清古建筑群（全国重点文保）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "上饶市婺源江湾景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.11333,
+     29.32466
+    ]
+   },
+   "properties": {
+    "id": 74,
+    "name": "上饶市篁岭景区",
+    "province": "江西省",
+    "city": "上饶市",
+    "ratingYear": 2024,
+    "category": "古村落",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "婺源徽派古村落，晒秋民俗",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "篁岭村"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     115.876956,
+     28.684618
+    ]
+   },
+   "properties": {
+    "id": 75,
+    "name": "南昌市东湖区滕王阁旅游区",
+    "province": "江西省",
+    "city": "南昌市",
+    "ratingYear": 2018,
+    "category": "复合人文",
+    "dynasty": "唐始建",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "江南名楼，现存建筑为1989年复建",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "南昌滕王阁游轮售票处"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.179645,
+     29.285214
+    ]
+   },
+   "properties": {
+    "id": 76,
+    "name": "景德镇市昌江区古窑民俗博览区",
+    "province": "江西省",
+    "city": "景德镇市",
+    "ratingYear": 2013,
+    "category": "复合人文",
+    "dynasty": "明至清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "清代镇窑等传统瓷窑（部分为迁建复烧），陶瓷文化；湖田古瓷窑址为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "景德镇古窑民俗博览区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.101,
+     36.256
+    ]
+   },
+   "properties": {
+    "id": 77,
+    "name": "泰安市泰山景区",
+    "province": "山东省",
+    "city": "泰安市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "先秦至清",
+    "dynastyGroup": "先秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化与自然双遗产，封禅文化名山，坐标取岱庙",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "泰山景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.991,
+     35.595
+    ]
+   },
+   "properties": {
+    "id": 78,
+    "name": "济宁市明故城三孔旅游区",
+    "province": "山东省",
+    "city": "济宁市",
+    "ratingYear": 2007,
+    "category": "宫殿坛庙",
+    "dynasty": "春秋至清",
+    "dynastyGroup": "先秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "孔庙、孔府、孔林，儒家文化核心遗存",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "明故城（三孔）旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.749344,
+     37.824715
+    ]
+   },
+   "properties": {
+    "id": 79,
+    "name": "烟台市蓬莱阁-三仙山-八仙过海旅游区",
+    "province": "山东省",
+    "city": "烟台市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "蓬莱阁为全国重点文保；三仙山、八仙过海为现代主题园",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "蓬莱阁·三仙山·八仙过海旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     120.67615,
+     36.13909
+    ]
+   },
+   "properties": {
+    "id": 80,
+    "name": "青岛市崂山景区",
+    "province": "山东省",
+    "city": "青岛市",
+    "ratingYear": 2011,
+    "category": "历史名山",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "道教全真派名山，崂山道教建筑群（太清宫）为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "崂山太清宫"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     118.472383,
+     36.67641
+    ]
+   },
+   "properties": {
+    "id": 81,
+    "name": "潍坊市青州古城景区",
+    "province": "山东省",
+    "city": "潍坊市",
+    "ratingYear": 2017,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "古城街区含复建；青州境内龙兴寺遗址、驼山石窟为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "青州古城旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.834939,
+     36.798218
+    ]
+   },
+   "properties": {
+    "id": 82,
+    "name": "淄博市周村古商城景区",
+    "province": "山东省",
+    "city": "淄博市",
+    "ratingYear": 2024,
+    "category": "历史街区",
+    "dynasty": "明清至民国",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "周村古商城为全国重点文保，清代商埠",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "周村古商城"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     117.009482,
+     36.660625
+    ]
+   },
+   "properties": {
+    "id": 83,
+    "name": "济南市天下第一泉景区",
+    "province": "山东省",
+    "city": "济南市",
+    "ratingYear": 2013,
+    "category": "古典园林",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "趵突泉、大明湖泉城园林群",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "趵突泉"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     122.17633,
+     37.50053
+    ]
+   },
+   "properties": {
+    "id": 84,
+    "name": "威海市刘公岛景区",
+    "province": "山东省",
+    "city": "威海市",
+    "ratingYear": 2011,
+    "category": "复合人文",
+    "dynasty": "清末",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "刘公岛甲午战争纪念地（北洋水师），全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "中国甲午战争博物院"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.935,
+     34.508
+    ]
+   },
+   "properties": {
+    "id": 85,
+    "name": "郑州市嵩山少林景区",
+    "province": "河南省",
+    "city": "郑州市",
+    "ratingYear": 2007,
+    "category": "宗教寺观",
+    "dynasty": "北魏至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "天地之中历史建筑群世界遗产，少林寺、塔林",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "嵩山少林景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.477,
+     34.555
+    ]
+   },
+   "properties": {
+    "id": 86,
+    "name": "洛阳市龙门石窟景区",
+    "province": "河南省",
+    "city": "洛阳市",
+    "ratingYear": 2007,
+    "category": "石窟石刻",
+    "dynasty": "北魏至唐",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "龙门石窟景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.305,
+     36.122
+    ]
+   },
+   "properties": {
+    "id": 87,
+    "name": "安阳市殷墟景区",
+    "province": "河南省",
+    "city": "安阳市",
+    "ratingYear": 2011,
+    "category": "古遗址",
+    "dynasty": "商",
+    "dynastyGroup": "先秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "殷墟景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     111.64289,
+     33.75488
+    ]
+   },
+   "properties": {
+    "id": 88,
+    "name": "洛阳市老君山－鸡冠洞旅游区",
+    "province": "河南省",
+    "city": "洛阳市",
+    "ratingYear": 2012,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "道教名山（老子归隐），山顶金顶群为2010年代复建；鸡冠洞为溶洞",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "老君山养生食府"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     116.48254,
+     34.17876
+    ]
+   },
+   "properties": {
+    "id": 89,
+    "name": "商丘市芒砀山汉文化旅游景区",
+    "province": "河南省",
+    "city": "商丘市",
+    "ratingYear": 2017,
+    "category": "陵寝墓葬",
+    "dynasty": "汉",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "西汉梁王陵墓群，全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "永城芒砀山汉文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.8824,
+     33.75188
+    ]
+   },
+   "properties": {
+    "id": 90,
+    "name": "周口市太昊伏羲陵文化旅游区",
+    "province": "河南省",
+    "city": "周口市",
+    "ratingYear": 2024,
+    "category": "宫殿坛庙",
+    "dynasty": "明至清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "太昊伏羲陵为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "太昊伏羲陵文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.07705,
+     31.80515
+    ]
+   },
+   "properties": {
+    "id": 91,
+    "name": "信阳市鸡公山景区",
+    "province": "河南省",
+    "city": "信阳市",
+    "ratingYear": 2022,
+    "category": "历史街区",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "鸡公山近代建筑群为全国重点文保，近代避暑地",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "信阳鸡公山风景区经营管理有限"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     111.004,
+     32.403
+    ]
+   },
+   "properties": {
+    "id": 92,
+    "name": "十堰市武当山风景区",
+    "province": "湖北省",
+    "city": "十堰市",
+    "ratingYear": 2011,
+    "category": "历史名山",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "武当山古建筑群世界遗产，坐标取金顶",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "武当山风景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.302,
+     30.543
+    ]
+   },
+   "properties": {
+    "id": 93,
+    "name": "武汉市黄鹤楼公园",
+    "province": "湖北省",
+    "city": "武汉市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "三国始建",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "历史名楼，现存建筑为1985年复建",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "黄鹤楼公园"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.638,
+     31.22
+    ]
+   },
+   "properties": {
+    "id": 94,
+    "name": "荆门市明显陵文化旅游景区",
+    "province": "湖北省",
+    "city": "荆门市",
+    "ratingYear": 2024,
+    "category": "陵寝墓葬",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "明清皇家陵寝世界遗产组成部分",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "明显陵文化旅游景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.029808,
+     32.013948
+    ]
+   },
+   "properties": {
+    "id": 95,
+    "name": "襄阳市古隆中景区",
+    "province": "湖北省",
+    "city": "襄阳市",
+    "ratingYear": 2019,
+    "category": "复合人文",
+    "dynasty": "三国至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "诸葛亮隐居地，古隆中为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "古隆中售票处"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.622674,
+     29.881788
+    ]
+   },
+   "properties": {
+    "id": 96,
+    "name": "咸宁市三国赤壁古战场景区",
+    "province": "湖北省",
+    "city": "咸宁市",
+    "ratingYear": 2018,
+    "category": "古遗址",
+    "dynasty": "东汉末",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "赤壁之战遗址，全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "三国赤壁古战场-凉亭"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.391692,
+     31.09776
+    ]
+   },
+   "properties": {
+    "id": 97,
+    "name": "武汉市木兰文化生态旅游区",
+    "province": "湖北省",
+    "city": "武汉市",
+    "ratingYear": 2014,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "木兰山古建筑群为全国重点文保，花木兰文化",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "木兰山"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.714452,
+     27.25517
+    ]
+   },
+   "properties": {
+    "id": 98,
+    "name": "衡阳市衡山旅游区",
+    "province": "湖南省",
+    "city": "衡阳市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "南岳，南岳庙为全国重点文保，坐标取祝融峰",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "南岳衡山旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.08815,
+     29.383645
+    ]
+   },
+   "properties": {
+    "id": 99,
+    "name": "岳阳市岳阳楼－君山岛景区",
+    "province": "湖南省",
+    "city": "岳阳市",
+    "ratingYear": 2011,
+    "category": "复合人文",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "岳阳楼为全国重点文保，江南名楼",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "岳阳楼-君山岛旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.935492,
+     28.184056
+    ]
+   },
+   "properties": {
+    "id": 100,
+    "name": "长沙市岳麓山-橘子洲旅游区",
+    "province": "湖南省",
+    "city": "长沙市",
+    "ratingYear": 2012,
+    "category": "历史名山",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "岳麓书院为全国重点文保（四大书院）",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "岳麓书院"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.595902,
+     27.953815
+    ]
+   },
+   "properties": {
+    "id": 101,
+    "name": "湘西州凤凰古城旅游区",
+    "province": "湖南省",
+    "city": "湘西土家族苗族自治州",
+    "ratingYear": 2024,
+    "category": "古城古镇",
+    "dynasty": "明清至民国",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "凤凰古城墙、沈从文故居等全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "凤凰古城旅拍馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.66601,
+     26.42051
+    ]
+   },
+   "properties": {
+    "id": 102,
+    "name": "株洲市炎帝陵景区",
+    "province": "湖南省",
+    "city": "株洲市",
+    "ratingYear": 2019,
+    "category": "宫殿坛庙",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "炎帝陵为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "炎帝陵"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     111.63344,
+     28.92106
+    ]
+   },
+   "properties": {
+    "id": 103,
+    "name": "常德市桃花源旅游区",
+    "province": "湖南省",
+    "city": "常德市",
+    "ratingYear": 2020,
+    "category": "复合人文",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "桃花源古建筑群为全国重点文保，陶渊明文化，部分建筑复建",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "常德桃花源机场"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.566,
+     22.376
+    ]
+   },
+   "properties": {
+    "id": 104,
+    "name": "江门市开平市开平碉楼文化旅游区",
+    "province": "广东省",
+    "city": "江门市",
+    "ratingYear": 2020,
+    "category": "古村落",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "开平碉楼与村落世界遗产，坐标取自力村碉楼群",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "开平碉楼文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.058527,
+     23.267011
+    ]
+   },
+   "properties": {
+    "id": 105,
+    "name": "惠州市博罗县罗浮山景区",
+    "province": "广东省",
+    "city": "惠州市",
+    "ratingYear": 2013,
+    "category": "历史名山",
+    "dynasty": "东晋至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "道教第七洞天，冲虚古观为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "罗浮山冲虚观"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.972447,
+     22.930099
+    ]
+   },
+   "properties": {
+    "id": 106,
+    "name": "佛山市南海区西樵山景区",
+    "province": "广东省",
+    "city": "佛山市",
+    "ratingYear": 2013,
+    "category": "历史名山",
+    "dynasty": "史前至清",
+    "dynastyGroup": "先秦",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "石燕岩采石遗址为全国重点文保，珠江文明名山",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "西樵山景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     112.472228,
+     23.075628
+    ]
+   },
+   "properties": {
+    "id": 107,
+    "name": "肇庆市端州区星湖旅游景区",
+    "province": "广东省",
+    "city": "肇庆市",
+    "ratingYear": 2019,
+    "category": "石窟石刻",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "七星岩摩崖石刻为全国重点文保；鼎湖山为自然保护区",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "七星岩摩崖石刻"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     114.393,
+     23.09508
+    ]
+   },
+   "properties": {
+    "id": 108,
+    "name": "惠州市惠城区惠州西湖旅游景区",
+    "province": "广东省",
+    "city": "惠州市",
+    "ratingYear": 2018,
+    "category": "古典园林",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": false,
+    "note": "苏东坡文化，泗州塔等湖上园林",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "泗洲塔观光船码头"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     113.52225,
+     22.445459
+    ]
+   },
+   "properties": {
+    "id": 109,
+    "name": "中山市孙中山故里旅游区",
+    "province": "广东省",
+    "city": "中山市",
+    "ratingYear": 2016,
+    "category": "复合人文",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "孙中山故居为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "孙中山故居纪念馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.296,
+     25.278
+    ]
+   },
+   "properties": {
+    "id": 110,
+    "name": "桂林市独秀峰·靖江王城景区",
+    "province": "广西壮族自治区",
+    "city": "桂林市",
+    "ratingYear": 2012,
+    "category": "宫殿坛庙",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "靖江王府及王陵为全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "独秀峰·靖江王城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     107.06968,
+     22.1378
+    ]
+   },
+   "properties": {
+    "id": 111,
+    "name": "崇左市花山岩画景区",
+    "province": "广西壮族自治区",
+    "city": "崇左市",
+    "ratingYear": 2024,
+    "category": "石窟石刻",
+    "dynasty": "战国至东汉",
+    "dynastyGroup": "先秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "左江花山岩画文化景观世界遗产，骆越先民岩画",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "宁明花山风景区有限公司"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     111.20666,
+     24.24996
+    ]
+   },
+   "properties": {
+    "id": 112,
+    "name": "贺州市黄姚古镇景区",
+    "province": "广西壮族自治区",
+    "city": "贺州市",
+    "ratingYear": 2022,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "黄姚古建筑群为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "黄姚古镇景区停车场"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.641939,
+     25.900222
+    ]
+   },
+   "properties": {
+    "id": 113,
+    "name": "柳州市程阳八寨景区",
+    "province": "广西壮族自治区",
+    "city": "柳州市",
+    "ratingYear": 2024,
+    "category": "古村落",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "程阳风雨桥为全国重点文保，侗族村寨",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "江景楼客栈"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.34421,
+     18.29512
+    ]
+   },
+   "properties": {
+    "id": 114,
+    "name": "三亚市天涯海角游览区",
+    "province": "海南省",
+    "city": "三亚市",
+    "ratingYear": 2024,
+    "category": "石窟石刻",
+    "dynasty": "清",
+    "dynastyGroup": "清",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "天涯海角摩崖石刻群（康熙至宣统）为全国重点文保，中国文化地理符号",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "天涯海角游览区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.788,
+     29.775
+    ]
+   },
+   "properties": {
+    "id": 115,
+    "name": "大足石刻景区",
+    "province": "重庆市",
+    "city": "重庆市",
+    "ratingYear": 2007,
+    "category": "石窟石刻",
+    "dynasty": "唐、宋",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "坐标取宝顶山石刻",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "大足石刻景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.57022,
+     31.043084
+    ]
+   },
+   "properties": {
+    "id": 116,
+    "name": "白帝城·瞿塘峡景区",
+    "province": "重庆市",
+    "city": "重庆市",
+    "ratingYear": 2022,
+    "category": "复合人文",
+    "dynasty": "三国至清",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "白帝城为全国重点文保，刘备托孤、三峡门户",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "白帝城"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     103.644956,
+     30.991213
+    ]
+   },
+   "properties": {
+    "id": 117,
+    "name": "成都市青城山－都江堰旅游景区",
+    "province": "四川省",
+    "city": "成都市",
+    "ratingYear": 2007,
+    "category": "复合人文",
+    "dynasty": "秦至清",
+    "dynastyGroup": "秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "青城山道教名山与都江堰古代水利工程，世界遗产，坐标取都江堰宝瓶口",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "都江堰市"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     103.334,
+     29.524
+    ]
+   },
+   "properties": {
+    "id": 118,
+    "name": "乐山市峨眉山景区",
+    "province": "四川省",
+    "city": "乐山市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "世界文化与自然双遗产，佛教四大名山，坐标取报国寺",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "峨眉山景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     103.772743,
+     29.544223
+    ]
+   },
+   "properties": {
+    "id": 119,
+    "name": "乐山市乐山大佛景区",
+    "province": "四川省",
+    "city": "乐山市",
+    "ratingYear": 2011,
+    "category": "石窟石刻",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "峨眉山-乐山大佛世界遗产，唐代摩崖造像",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "乐山大佛景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.551,
+     32.201
+    ]
+   },
+   "properties": {
+    "id": 120,
+    "name": "广元市剑门蜀道剑门关旅游景区",
+    "province": "四川省",
+    "city": "广元市",
+    "ratingYear": 2015,
+    "category": "关隘长城",
+    "dynasty": "三国",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "剑门蜀道遗址为全国重点文保，蜀道核心关隘",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "剑门蜀道剑门关旅游景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.97678,
+     31.57331
+    ]
+   },
+   "properties": {
+    "id": 121,
+    "name": "南充市阆中古城旅游景区",
+    "province": "四川省",
+    "city": "南充市",
+    "ratingYear": 2013,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "阆中古城为全国重点文保，三国张飞守阆中",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "阆中古城旅游景区东门"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     103.62563,
+     30.50835
+    ]
+   },
+   "properties": {
+    "id": 122,
+    "name": "成都市安仁古镇景区",
+    "province": "四川省",
+    "city": "成都市",
+    "ratingYear": 2022,
+    "category": "历史街区",
+    "dynasty": "清末至民国",
+    "dynastyGroup": "清末民国",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "刘氏庄园为全国重点文保，民国公馆群",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "刘氏祖居"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     106.68354,
+     26.33529
+    ]
+   },
+   "properties": {
+    "id": 123,
+    "name": "贵阳市花溪区青岩古镇景区",
+    "province": "贵州省",
+    "city": "贵阳市",
+    "ratingYear": 2017,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "青岩古镇为全国重点文保，明代军事古镇",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "青岩古镇景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     108.42872,
+     27.05377
+    ]
+   },
+   "properties": {
+    "id": 124,
+    "name": "黔东南州镇远县镇远古城旅游景区",
+    "province": "贵州省",
+    "city": "黔东南苗族侗族自治州",
+    "ratingYear": 2019,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "青龙洞古建筑群为全国重点文保，坐标取青龙洞",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "公厕"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     100.235,
+     26.872
+    ]
+   },
+   "properties": {
+    "id": 125,
+    "name": "丽江市丽江古城景区",
+    "province": "云南省",
+    "city": "丽江市",
+    "ratingYear": 2011,
+    "category": "古城古镇",
+    "dynasty": "宋至清",
+    "dynastyGroup": "宋",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "丽江古城世界遗产",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "丽江古城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     100.149,
+     25.706
+    ]
+   },
+   "properties": {
+    "id": 126,
+    "name": "大理州崇圣寺三塔文化旅游区",
+    "province": "云南省",
+    "city": "大理白族自治州",
+    "ratingYear": 2011,
+    "category": "宗教寺观",
+    "dynasty": "唐、五代",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "崇圣寺三塔为全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "崇圣寺三塔文化旅游区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     98.4657,
+     25.01423
+    ]
+   },
+   "properties": {
+    "id": 127,
+    "name": "腾冲市和顺古镇景区",
+    "province": "云南省",
+    "city": "保山市",
+    "ratingYear": 2024,
+    "category": "古城古镇",
+    "dynasty": "明清至民国",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "和顺图书馆旧址为全国重点文保，侨乡古镇",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "和顺古镇售票处"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.117,
+     29.657
+    ]
+   },
+   "properties": {
+    "id": 128,
+    "name": "拉萨市布达拉宫景区",
+    "province": "西藏自治区",
+    "city": "拉萨市",
+    "ratingYear": 2013,
+    "category": "宗教寺观",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "布达拉宫历史建筑群世界遗产",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "布达拉宫景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     91.13,
+     29.653
+    ]
+   },
+   "properties": {
+    "id": 129,
+    "name": "拉萨市大昭寺景区",
+    "province": "西藏自治区",
+    "city": "拉萨市",
+    "ratingYear": 2013,
+    "category": "宗教寺观",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "布达拉宫历史建筑群世界遗产扩展项目",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "大昭寺景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     88.870656,
+     29.267153
+    ]
+   },
+   "properties": {
+    "id": 130,
+    "name": "日喀则市扎什伦布寺景区",
+    "province": "西藏自治区",
+    "city": "日喀则市",
+    "ratingYear": 2017,
+    "category": "宗教寺观",
+    "dynasty": "明至清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "藏传佛教格鲁派寺院，历世班禅驻锡地，全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "扎什伦布寺"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.279,
+     34.385
+    ]
+   },
+   "properties": {
+    "id": 131,
+    "name": "西安市秦始皇帝陵博物院景区",
+    "province": "陕西省",
+    "city": "西安市",
+    "ratingYear": 2007,
+    "category": "古遗址",
+    "dynasty": "秦",
+    "dynastyGroup": "秦",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "含兵马俑坑与秦始皇陵，坐标取兵马俑",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "秦始皇帝陵博物院景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.20798,
+     34.36493
+    ]
+   },
+   "properties": {
+    "id": 132,
+    "name": "西安市华清宫景区",
+    "province": "陕西省",
+    "city": "西安市",
+    "ratingYear": 2007,
+    "category": "宫殿坛庙",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "唐代皇家离宫，华清宫遗址为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "陕西华清宫文化旅游景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     108.965957,
+     34.213219
+    ]
+   },
+   "properties": {
+    "id": 133,
+    "name": "西安市大雁塔－大唐芙蓉园景区",
+    "province": "陕西省",
+    "city": "西安市",
+    "ratingYear": 2011,
+    "category": "宗教寺观",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "大雁塔为丝绸之路世界遗产点、全国重点文保；大唐芙蓉园为现代仿唐园林",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "大雁塔·大唐芙蓉园景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     108.968,
+     34.294
+    ]
+   },
+   "properties": {
+    "id": 134,
+    "name": "西安市大明宫旅游景区",
+    "province": "陕西省",
+    "city": "西安市",
+    "ratingYear": 2020,
+    "category": "古遗址",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "唐大明宫遗址，丝绸之路世界遗产点",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "大明宫旅游景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     108.946,
+     34.254
+    ]
+   },
+   "properties": {
+    "id": 135,
+    "name": "西安市城墙·碑林历史文化景区",
+    "province": "陕西省",
+    "city": "西安市",
+    "ratingYear": 2018,
+    "category": "复合人文",
+    "dynasty": "宋至明",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "明城墙与西安碑林复合，均为全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "西安城墙·碑林历史文化景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     110.08256,
+     34.47902
+    ]
+   },
+   "properties": {
+    "id": 136,
+    "name": "渭南市华山风景区",
+    "province": "陕西省",
+    "city": "渭南市",
+    "ratingYear": 2011,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "西岳，西岳庙为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "华山风景名胜区-宾馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     107.89962,
+     34.43778
+    ]
+   },
+   "properties": {
+    "id": 137,
+    "name": "宝鸡市法门文化景区",
+    "province": "陕西省",
+    "city": "宝鸡市",
+    "ratingYear": 2014,
+    "category": "宗教寺观",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "法门寺遗址为全国重点文保，佛指舍利；含现代合十舍利塔",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "法门寺佛文化景区管理委员会"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     109.269149,
+     35.583403
+    ]
+   },
+   "properties": {
+    "id": 138,
+    "name": "延安市黄帝陵景区",
+    "province": "陕西省",
+    "city": "延安市",
+    "ratingYear": 2007,
+    "category": "陵寝墓葬",
+    "dynasty": "汉至清",
+    "dynastyGroup": "汉",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "黄帝陵为全国重点文保，历代祭祀",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "黄帝陵景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     108.221,
+     34.576
+    ]
+   },
+   "properties": {
+    "id": 139,
+    "name": "咸阳市乾陵景区",
+    "province": "陕西省",
+    "city": "咸阳市",
+    "ratingYear": 2024,
+    "category": "陵寝墓葬",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "唐高宗与武则天合葬陵，全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "乾陵景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     98.216,
+     39.803
+    ]
+   },
+   "properties": {
+    "id": 140,
+    "name": "嘉峪关市嘉峪关文物景区",
+    "province": "甘肃省",
+    "city": "嘉峪关市",
+    "ratingYear": 2007,
+    "category": "关隘长城",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "长城世界遗产，万里长城西端起点",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "嘉峪关文物景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.973,
+     34.349
+    ]
+   },
+   "properties": {
+    "id": 141,
+    "name": "天水市麦积山景区",
+    "province": "甘肃省",
+    "city": "天水市",
+    "ratingYear": 2011,
+    "category": "石窟石刻",
+    "dynasty": "十六国至明",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "丝绸之路世界遗产点，麦积山石窟",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "麦积山景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     103.04462,
+     35.8057
+    ]
+   },
+   "properties": {
+    "id": 142,
+    "name": "临夏州炳灵寺世界文化遗产旅游区",
+    "province": "甘肃省",
+    "city": "临夏回族自治州",
+    "ratingYear": 2020,
+    "category": "石窟石刻",
+    "dynasty": "十六国至明",
+    "dynastyGroup": "魏晋南北朝",
+    "worldHeritage": true,
+    "majorSite": true,
+    "note": "丝绸之路世界遗产点，炳灵寺石窟",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "炳灵寺石窟"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     106.525573,
+     35.562415
+    ]
+   },
+   "properties": {
+    "id": 143,
+    "name": "平凉市崆峒山风景名胜区",
+    "province": "甘肃省",
+    "city": "平凉市",
+    "ratingYear": 2007,
+    "category": "历史名山",
+    "dynasty": "唐至清",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "道教名山，崆峒山古建筑群为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "崆峒山东门停车场"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     101.567,
+     36.496
+    ]
+   },
+   "properties": {
+    "id": 144,
+    "name": "西宁市塔尔寺景区",
+    "province": "青海省",
+    "city": "西宁市",
+    "ratingYear": 2012,
+    "category": "宗教寺观",
+    "dynasty": "明",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "藏传佛教格鲁派寺院，宗喀巴诞生地，全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "塔尔寺景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     106.504299,
+     38.290987
+    ]
+   },
+   "properties": {
+    "id": 145,
+    "name": "银川市水洞沟旅游区",
+    "province": "宁夏回族自治区",
+    "city": "银川市",
+    "ratingYear": 2015,
+    "category": "古遗址",
+    "dynasty": "旧石器时代、明",
+    "dynastyGroup": "先秦",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "旧石器时代遗址与明长城复合，水洞沟遗址为全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "水洞沟遗址博物馆"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     105.984885,
+     37.887585
+    ]
+   },
+   "properties": {
+    "id": 146,
+    "name": "吴忠市青铜峡黄河大峡谷旅游区",
+    "province": "宁夏回族自治区",
+    "city": "吴忠市",
+    "ratingYear": 2024,
+    "category": "宗教寺观",
+    "dynasty": "西夏",
+    "dynastyGroup": "宋",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "一百零八塔为西夏佛教塔群，全国重点文保",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "一百零八塔路"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     75.989,
+     39.47
+    ]
+   },
+   "properties": {
+    "id": 147,
+    "name": "喀什地区喀什古城景区",
+    "province": "新疆维吾尔自治区",
+    "city": "喀什地区",
+    "ratingYear": 2015,
+    "category": "古城古镇",
+    "dynasty": "明、清",
+    "dynastyGroup": "明",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "喀什噶尔老城为全国重点文保",
+    "coordSource": "sample",
+    "geocodeConfidence": "high",
+    "geocodePoi": "喀什古城景区"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     75.23305,
+     37.7799
+    ]
+   },
+   "properties": {
+    "id": 148,
+    "name": "喀什地区帕米尔旅游区",
+    "province": "新疆维吾尔自治区",
+    "city": "喀什地区",
+    "ratingYear": 2019,
+    "category": "古遗址",
+    "dynasty": "唐",
+    "dynastyGroup": "隋唐",
+    "worldHeritage": false,
+    "majorSite": true,
+    "note": "塔什库尔干石头城遗址为全国重点文保，古丝绸之路重镇",
+    "coordSource": "tianditu",
+    "geocodeConfidence": "high",
+    "geocodePoi": "塔什库尔干县石头城社区党支部"
+   }
+  }
+ ]
+}

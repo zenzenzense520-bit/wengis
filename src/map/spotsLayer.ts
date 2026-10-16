@@ -9,13 +9,16 @@ import { fromLonLat } from 'ol/proj';
 import { CATEGORY_COLORS, CLUSTER_DISTANCE, CLUSTER_MIN_DISTANCE } from '../config/layers';
 import type { SpotCollection, SpotProperties } from '../types/spot';
 
-// 5A 景区点位图层：支持聚合/散点两种模式，按文化类别着色
+// 5A 景区点位图层：支持聚合/散点两种模式，按文化类别着色，支持筛选联动
 
 /** 聚合要素在要素属性中的键名 */
 export const CLUSTER_FEATURES_KEY = 'features';
 
 /** 景区点位的属性键名 */
 export const SPOT_PROPERTIES_KEY = 'spot';
+
+/** 景区筛选谓词（返回 true 表示该点可见） */
+export type SpotFilter = (properties: SpotProperties) => boolean;
 
 function createSpotStyle(properties: SpotProperties): Style {
   const color = CATEGORY_COLORS[properties.category] ?? '#333333';
@@ -27,6 +30,9 @@ function createSpotStyle(properties: SpotProperties): Style {
     }),
   });
 }
+
+/** 空样式（隐藏被筛选掉的点） */
+const HIDDEN_STYLE = new Style({});
 
 function createClusterStyle(feature: FeatureLike): Style {
   const features = feature.get(CLUSTER_FEATURES_KEY) as Feature[] | undefined;
@@ -69,23 +75,39 @@ export function buildFeatures(collection: SpotCollection): Feature<Point>[] {
 
 export interface SpotsLayerHandle {
   layer: VectorLayer<VectorSource>;
+  /** 全量点数据源（供核密度图层共享） */
+  rawSource: VectorSource;
   setClusterEnabled: (enabled: boolean) => void;
+  /** 更新筛选谓词并触发聚合重算与重绘 */
+  setFilter: (filter: SpotFilter) => void;
+  /** 替换全部点要素（切换本地 / WFS 数据源时使用） */
+  replaceFeatures: (features: Feature<Point>[]) => void;
   getFeaturesAtPixel: (map: Map, pixel: number[]) => Feature[];
 }
 
 /** 创建景区点位图层（默认聚合） */
 export function createSpotsLayer(features: Feature<Point>[]): SpotsLayerHandle {
   const rawSource = new VectorSource({ features });
+  let filter: SpotFilter = () => true;
 
   const clusterSource = new Cluster({
     distance: CLUSTER_DISTANCE,
     minDistance: CLUSTER_MIN_DISTANCE,
     source: rawSource,
+    // 不满足筛选的点返回 null，不参与聚合
+    geometryFunction: (feature: Feature<Point>) => {
+      const spot = feature.get(SPOT_PROPERTIES_KEY) as SpotProperties | undefined;
+      if (spot && filter(spot)) {
+        return feature.getGeometry() ?? null;
+      }
+      return null;
+    },
   });
 
   const layer: VectorLayer<VectorSource> = new VectorLayer<VectorSource>({
     properties: { name: 'ancient-5a' },
     source: clusterSource,
+    zIndex: 30,
     style: (feature) => {
       const children = feature.get(CLUSTER_FEATURES_KEY) as Feature[] | undefined;
       if (children && children.length > 1) {
@@ -94,12 +116,24 @@ export function createSpotsLayer(features: Feature<Point>[]): SpotsLayerHandle {
       // 聚合模式单点取 children[0]，散点模式取要素自身
       const carrier = children?.[0] ?? feature;
       const spot = carrier.get(SPOT_PROPERTIES_KEY) as SpotProperties | undefined;
-      return spot ? createSpotStyle(spot) : new Style({});
+      return spot && filter(spot) ? createSpotStyle(spot) : HIDDEN_STYLE;
     },
   });
 
   const setClusterEnabled = (enabled: boolean): void => {
     layer.setSource(enabled ? clusterSource : rawSource);
+  };
+
+  const setFilter = (next: SpotFilter): void => {
+    filter = next;
+    clusterSource.refresh();
+    layer.changed();
+  };
+
+  const replaceFeatures = (newFeatures: Feature<Point>[]): void => {
+    rawSource.clear();
+    rawSource.addFeatures(newFeatures);
+    clusterSource.refresh();
   };
 
   const getFeaturesAtPixel = (map: Map, pixel: number[]): Feature[] => {
@@ -110,8 +144,13 @@ export function createSpotsLayer(features: Feature<Point>[]): SpotsLayerHandle {
       return [];
     }
     const children = hit.get(CLUSTER_FEATURES_KEY) as Feature[] | undefined;
-    return children ?? [hit];
+    const candidates = children ?? [hit];
+    // 再按筛选谓词过滤，避免命中被隐藏的点
+    return candidates.filter((f) => {
+      const spot = f.get(SPOT_PROPERTIES_KEY) as SpotProperties | undefined;
+      return spot ? filter(spot) : true;
+    });
   };
 
-  return { layer, setClusterEnabled, getFeaturesAtPixel };
+  return { layer, rawSource, setClusterEnabled, setFilter, replaceFeatures, getFeaturesAtPixel };
 }

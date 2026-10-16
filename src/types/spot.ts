@@ -15,6 +15,25 @@ export type SpotCategory =
   | '历史街区'
   | '复合人文';
 
+/** 朝代主时间轴分组（按最早始建朝代归组，顺序即时间顺序） */
+export type DynastyGroup =
+  | '先秦'
+  | '秦'
+  | '汉'
+  | '魏晋南北朝'
+  | '隋唐'
+  | '宋'
+  | '元'
+  | '明'
+  | '清'
+  | '清末民国';
+
+/** 坐标来源：47 点权威样例 / 天地图地理编码 */
+export type CoordSource = 'sample' | 'tianditu';
+
+/** 地理编码置信度 */
+export type CoordConfidence = 'high' | 'medium' | 'low';
+
 /** GeoJSON 要素属性（强类型，禁止使用 any 或未结构化对象） */
 export interface SpotProperties {
   /** 景区唯一编号（与原始名单序号对应） */
@@ -31,12 +50,20 @@ export interface SpotProperties {
   category: SpotCategory;
   /** 始建或主体遗存所属朝代（跨代用顿号分隔） */
   dynasty: string;
-  /** 是否为世界文化遗产（含扩展项目、文化景观） */
+  /** 朝代主时间轴分组（按最早始建朝代归组） */
+  dynastyGroup: DynastyGroup;
+  /** 是否为世界文化遗产（含扩展项目、文化景观、双遗产的文化部分） */
   worldHeritage: boolean;
   /** 是否为全国重点文物保护单位（景区核心遗存） */
   majorSite: boolean;
   /** 备注（复建、复合景区等说明） */
   note?: string;
+  /** 坐标来源 */
+  coordSource?: CoordSource;
+  /** 地理编码置信度 */
+  geocodeConfidence?: CoordConfidence;
+  /** 地理编码命中的 POI 名称 */
+  geocodePoi?: string;
 }
 
 /** 景区点要素 */
@@ -53,4 +80,30 @@ export interface SpotFeature {
 export interface SpotCollection {
   type: 'FeatureCollection';
   features: SpotFeature[];
+}
+
+/** 省界要素属性 */
+export interface ProvinceProperties {
+  adcode: string;
+  name: string;
+  center?: [number, number];
+  centroid?: [number, number];
+  childrenNum?: number;
+  level?: string;
+}
+
+/** 省界面要素（Polygon / MultiPolygon） */
+export interface ProvinceFeature {
+  type: 'Feature';
+  geometry: {
+    type: 'Polygon' | 'MultiPolygon';
+    coordinates: number[][][][] | number[][][][][];
+  };
+  properties: ProvinceProperties;
+}
+
+/** 省界要素集合 */
+export interface ProvinceCollection {
+  type: 'FeatureCollection';
+  features: ProvinceFeature[];
 }

@@ -7,7 +7,7 @@ import { dirname, resolve } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const target = process.argv[2]
   ? resolve(process.argv[2])
-  : resolve(__dirname, '../data/geojson/ancient_5a.sample.geojson');
+  : resolve(__dirname, '../data/geojson/ancient_5a_full.geojson');
 
 const REQUIRED_FIELDS = [
   'id', 'name', 'province', 'city', 'ratingYear',
@@ -16,6 +16,9 @@ const REQUIRED_FIELDS = [
 const CATEGORIES = new Set([
   '宫殿坛庙', '古典园林', '古城古镇', '古村落', '宗教寺观', '历史名山',
   '石窟石刻', '古遗址', '陵寝墓葬', '关隘长城', '历史街区', '复合人文',
+]);
+const DYNASTY_GROUPS = new Set([
+  '先秦', '秦', '汉', '魏晋南北朝', '隋唐', '宋', '元', '明', '清', '清末民国',
 ]);
 
 let collection;
@@ -58,6 +61,9 @@ const ids = new Set();
   if (!CATEGORIES.has(p.category)) {
     errors.push(`${where}：未知类别 "${p.category}"`);
   }
+  if (p.dynastyGroup !== undefined && !DYNASTY_GROUPS.has(p.dynastyGroup)) {
+    errors.push(`${where}：未知朝代分组 "${p.dynastyGroup}"`);
+  }
   if (typeof p.ratingYear === 'number' && (p.ratingYear < 2007 || p.ratingYear > 2026)) {
     errors.push(`${where}：评定年份 ${p.ratingYear} 不合理`);
   }
@@ -78,4 +84,5 @@ for (const f of collection.features) {
   categoryCount[f.properties.category] = (categoryCount[f.properties.category] ?? 0) + 1;
 }
 console.log(`[OK] 校验通过：${collection.features.length} 个要素，${ids.size} 个唯一 id`);
+console.log(`数据文件：${target}`);
 console.log('类别分布：', JSON.stringify(categoryCount, null, 0));

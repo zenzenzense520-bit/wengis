@@ -1,17 +1,17 @@
 # 02 PostGIS 部署与数据入库
 
-## 一、本机现状（2026-09-20 已核实）
+## 一、本机现状（2026-10-08 核实）
 
 | 组件 | 状态 | 位置 |
 |---|---|---|
 | PostgreSQL 18 | 已安装，服务 `postgresql-x64-18` 运行中 | `E:\postgis`（数据目录 `E:\postgis\data`） |
 | psql | 已安装但未加入 PATH | `E:\postgis\bin\psql.exe` |
-| **PostGIS 扩展** | **未安装**（`share/extension` 中无 postgis 控制文件，`lib` 中无 postgis.dll） | — |
-| 认证方式 | scram-sha-256，需要 postgres 密码 | — |
+| **PostGIS 扩展** | **3.6.2 文件已安装**；尚未通过数据库连接执行 `CREATE EXTENSION` 验证 | `E:\postgis` |
+| 认证方式 | scram-sha-256；当前环境没有 pgpass，`psql -w` 返回 `fe_sendauth: no password supplied` | — |
 
 > 注意：PostgreSQL 18 必须搭配 **PostGIS 3.6 或以上**（低版本不支持 PG18）。
 
-## 二、安装 PostGIS 3.6+（二选一）
+## 二、安装 PostGIS 3.6+（已完成；若重装再参考）
 
 ### 方式 A：EnterpriseDB 官方 Windows 构建（推荐）
 
@@ -80,9 +80,9 @@ $env:PGPASSWORD = "你的postgres密码"
 & "E:\postgis\bin\psql.exe" -U postgres -h localhost -d wengis -f D:\webgis\sql\03_verify.sql
 ```
 
-应看到：PostGIS 版本、47 条样例记录、类别分布与 `data/geojson` 校验结果一致。
+应看到：PostGIS 版本、148 条景区记录、35 个省级面要素及类别分布与 `data/geojson/ancient_5a_full.geojson` 校验结果一致。当前入库 SQL 使用完整 148 条候选数据。
 
-## 六、省界面数据入库（后续）
+## 六、省界面数据入库（已生成 SQL，待数据库连接后导入）
 
 ```powershell
 # 下载全国省级行政区 GeoJSON（WGS84）后
@@ -96,5 +96,5 @@ $env:PGPASSWORD = "你的postgres密码"
 ## 七、常见问题
 
 1. **`could not open extension control file postgis.control`**：PostGIS 未安装或安装目录选错，重装并指向 `E:\postgis`。
-2. **密码认证失败**：`pg_hba.conf` 为 scram-sha-256，必须用安装时设置的 postgres 密码；忘记密码需改 `pg_hba.conf` 临时为 trust 后重置。
+2. **密码认证失败**：`pg_hba.conf` 为 scram-sha-256，必须使用 postgres 密码；当前 `psql -w` 已确认没有可用凭据。请通过 `scripts\setup-db.ps1` 交互输入，或安全配置 PostgreSQL 的用户级 pgpass。不要将密码写入仓库或命令行参数。忘记密码时按本机 PostgreSQL 管理流程重置，不建议长期启用 trust。
 3. **PG18 装不上 PostGIS**：确认下载的是 pg18 目录下的 bundle；PostGIS 3.5 及以下不支持 PG18。

@@ -103,6 +103,14 @@ body,
   color: #6b7280;
 }
 
+.note.status-ok {
+  color: #1b7a3d;
+}
+
+.note.status-err {
+  color: #b3261e;
+}
+
 .map-container {
   flex: 1;
   position: relative;
@@ -207,4 +215,234 @@ body,
 .loading.error {
   color: #c0392b;
   max-width: 420px;
+}
+
+/* ===== 朝代时间轴 ===== */
+.timeline-bar {
+  height: 66px;
+  background: #f3ece1;
+  border-bottom: 1px solid #e5ddd2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 16px;
+}
+
+.timeline-all {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  background: #fff;
+  border: 1px solid #d7cbb8;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #7b241c;
+}
+
+.timeline-all.active {
+  background: #7b241c;
+  color: #fff;
+  border-color: #7b241c;
+}
+
+.timeline-track {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.dynasty-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 1px;
+  flex-shrink: 0;
+}
+
+.dynasty-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px #c9bca5;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.dynasty-label {
+  font-size: 11px;
+  margin-top: 3px;
+  color: #6b5d4a;
+}
+
+.dynasty-count {
+  font-size: 10px;
+  color: #a8967c;
+}
+
+.dynasty-line {
+  flex: 1;
+  height: 2px;
+  background: #d7cbb8;
+  min-width: 8px;
+}
+
+.dynasty-node.active .dynasty-dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px rgba(123, 36, 28, 0.22);
+}
+
+.dynasty-node.active .dynasty-label {
+  color: #7b241c;
+  font-weight: 700;
+}
+
+.timeline-mode {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #6b5d4a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+/* ===== 筛选面板 ===== */
+.filter-heading {
+  font-size: 12.5px;
+  color: #8a6d3b;
+  margin: 12px 0 6px;
+}
+
+.filter-heading:first-child {
+  margin-top: 0;
+}
+
+.filter-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 6px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.filter-item .legend-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 5px 6px;
+  font-size: 12.5px;
+  border: 1px solid #d7cbb8;
+  border-radius: 4px;
+  background: #fff;
+  color: #1f2937;
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.filter-count {
+  font-size: 12.5px;
+  color: #7b241c;
+  font-weight: 700;
+}
+
+.filter-reset {
+  padding: 5px 12px;
+  font-size: 12px;
+  background: #7b241c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ===== 统计分析抽屉 ===== */
+.charts-toggle {
+  margin-left: auto;
+  background: #fff;
+  color: #7b241c;
+  border: none;
+  padding: 5px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.charts-drawer {
+  position: fixed;
+  top: 118px;
+  right: 0;
+  bottom: 0;
+  width: 380px;
+  background: #fff;
+  box-shadow: -2px 0 14px rgba(0, 0, 0, 0.18);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+}
+
+.charts-drawer.open {
+  transform: translateX(0);
+}
+
+.charts-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #7b241c;
+  color: #fff;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.charts-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.charts-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+}
+
+.chart-host {
+  margin-bottom: 10px;
+}
+
+.chart-title {
+  font-size: 12.5px;
+  color: #7b241c;
+  font-weight: 700;
+  margin: 8px 0 2px;
+}
+
+.chart-body {
+  width: 100%;
 }
