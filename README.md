@@ -17,10 +17,10 @@
 | 层 | 技术 | 版本 | 用途 |
 |---|---|---|---|
 | 前端渲染 | OpenLayers | ^10.10 | 地图、聚合、弹窗、图层控制 |
-| 统计图表 | ECharts | ^6.1 | 类别/省份/朝代统计（下一阶段接入） |
+| 统计图表 | ECharts | ^6.1 | 类别/省份/朝代统计 |
 | 构建 | Vite + TypeScript（strict） | ^8.3 / ^7.0 | 工程化，类型零 any |
-| 空间数据库 | PostgreSQL 18 + PostGIS 3.6+ | 已装 PG / 待装 PostGIS | 空间存储与查询 |
-| 地图服务 | GeoServer 2.28.x + JDK 21 | 待安装 | WMS/WFS 发布 |
+| 空间数据库 | PostgreSQL 18 + PostGIS 3.6+ | 已装 PG  PostGIS | 空间存储与查询 |
+| 地图服务 | GeoServer 2.28.x + JDK 21 | WMS/WFS 发布 |
 | 底图 | 天地图（默认）/ ArcGIS Online / OSM | — | 天地图 CGCS2000 中文标注；ArcGIS/OSM 为无 key 备选；均与 WGS84 数据无偏移 |
 
 ## 三、目录结构
@@ -88,32 +88,3 @@ bash scripts/dev.sh                 # http://localhost:43200
 
 可复现验证：Node.js 24 下运行 `bash scripts/test.sh`（逻辑、数据、类型检查、生产构建），Windows 下运行 `bash scripts/test-browser.sh`（系统 Edge 验证筛选、地图、统计、重置、散点模式及移动布局），日志输出到 `logs/`。详见 [筛选统计与验证](docs/04_筛选统计与验证.md)。
 
-## 六、当前进度
-
-- [x] 官方 358 家名单获取与存档（文旅部数据服务页 + 政务门户，双源核对）
-- [x] 古代类筛选口径与 12 分类体系（docs/01）
-- [x] 前端工程骨架（Vite + TS 严格模式 + OpenLayers）
-- [x] 底图切换（天地图矢量/影像、ArcGIS 街道/地形、OSM）+ 47 点聚合 + 类别配色 + 弹窗 + 图层开关
-- [x] 名称、省份、类别、朝代记录、评定截止年份筛选与地图统计联动
-- [x] 可复现逻辑测试与 Edge 交互测试
-- [x] 字段级来源记录、弹窗核验状态与 47 点派生核验清单（首批 5 条世界遗产关联）
-- [x] 47 条 5A 名单逐条匹配（45 条单年份一致、殷墟站内冲突待核查、山海关多年份保留原文）与 5 条 OSM 坐标候选（保留原样例点位）
-- [ ] GitHub 自动验证流程（当前提交凭据缺少 workflow 权限）
-- [x] GeoJSON 数据校验与 GeoJSON→SQL 工具
-- [x] PostGIS 建库建表 SQL、GeoServer 发布文档
-- [ ] 安装 PostGIS 3.6+（需 postgres 密码，见 docs/02）
-- [ ] 安装 JDK 21 + GeoServer 2.28.x（见 docs/03）
-- [ ] 358 家全量筛选与坐标地理编码（150–180 家）
-- [ ] 正式朝代时间轴与 ECharts 统计图（当前已有样例类别分布统计）
-- [ ] 省界面图层、核密度分析、WMS/WFS 接入
-
-## 七、课程考核点对应
-
-| 考核内容 | 项目落点 |
-|---|---|
-| WMS/WFS 标准服务 | GeoServer 发布 ancient_5a、provinces（docs/03） |
-| 空间数据库 | PostGIS 建表、GIST 索引、空间查询视图（sql/02、03） |
-| 矢量图层与渲染 | OpenLayers Cluster + 分类符号化 |
-| 交互查询 | Overlay 弹窗、点击查询、图层开关 |
-| 时空可视化 | 朝代时间轴（开发中）、5A 评定批次时序 |
-| 开源合规 | 仅 FOSS 组件；底图与数据均标注来源 |
